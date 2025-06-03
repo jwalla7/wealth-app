@@ -41,12 +41,12 @@ const data = {
     },
     {
       title: "Cryptocurrency",
-      url: "/dashboard/investments",
+      url: "/dashboard/cryptocurrency",
       icon: IconFolder,
     },
     {
-      title: "Vechicles",
-      url: "/dashboard/vechicles",
+      title: "Other Property",
+      url: "/dashboard/other-property",
       icon: IconUsers,
     },
     {

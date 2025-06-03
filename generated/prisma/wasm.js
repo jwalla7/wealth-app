@@ -167,9 +167,85 @@ exports.Prisma.VerificationTokenScalarFieldEnum = {
   expires: 'expires'
 };
 
+exports.Prisma.AssetScalarFieldEnum = {
+  assetId: 'assetId',
+  assetDescription: 'assetDescription',
+  assetInfo: 'assetInfo',
+  assetInfoType: 'assetInfoType',
+  assetMask: 'assetMask',
+  assetName: 'assetName',
+  assetOwnerName: 'assetOwnerName',
+  balanceAsOf: 'balanceAsOf',
+  balanceCostBasis: 'balanceCostBasis',
+  balanceCostFrom: 'balanceCostFrom',
+  balanceCurrent: 'balanceCurrent',
+  balanceFrom: 'balanceFrom',
+  balancePrice: 'balancePrice',
+  balancePriceFrom: 'balancePriceFrom',
+  balanceQuantityCurrent: 'balanceQuantityCurrent',
+  beneficiaryComposition: 'beneficiaryComposition',
+  cognitoId: 'cognitoId',
+  creationDate: 'creationDate',
+  currencyCode: 'currencyCode',
+  deactivateBy: 'deactivateBy',
+  descriptionEstatePlan: 'descriptionEstatePlan',
+  hasInvestment: 'hasInvestment',
+  includeInNetWorth: 'includeInNetWorth',
+  institutionId: 'institutionId',
+  institutionName: 'institutionName',
+  integration: 'integration',
+  integrationAccountId: 'integrationAccountId',
+  isActive: 'isActive',
+  isAsset: 'isAsset',
+  isFavorite: 'isFavorite',
+  isLinkedVendor: 'isLinkedVendor',
+  lastUpdate: 'lastUpdate',
+  lastUpdateAttempt: 'lastUpdateAttempt',
+  logoName: 'logoName',
+  modificationDate: 'modificationDate',
+  nextUpdate: 'nextUpdate',
+  nickname: 'nickname',
+  note: 'note',
+  noteDate: 'noteDate',
+  ownership: 'ownership',
+  primaryAssetCategory: 'primaryAssetCategory',
+  status: 'status',
+  statusCode: 'statusCode',
+  userInstitutionId: 'userInstitutionId',
+  vendorAccountType: 'vendorAccountType',
+  vendorContainer: 'vendorContainer',
+  vendorResponse: 'vendorResponse',
+  vendorResponseType: 'vendorResponseType',
+  wealthAssetType: 'wealthAssetType',
+  wid: 'wid'
+};
+
+exports.Prisma.HoldingsScalarFieldEnum = {
+  id: 'id',
+  assetId: 'assetId'
+};
+
+exports.Prisma.MajorAssetClassScalarFieldEnum = {
+  id: 'id',
+  holdingsId: 'holdingsId',
+  majorClass: 'majorClass'
+};
+
+exports.Prisma.AssetClassScalarFieldEnum = {
+  id: 'id',
+  majorAssetClassId: 'majorAssetClassId',
+  minorAssetClass: 'minorAssetClass',
+  value: 'value'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
 };
 
 exports.Prisma.QueryMode = {
@@ -182,13 +258,23 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
+
 
 exports.Prisma.ModelName = {
   DefaultUser: 'DefaultUser',
   User: 'User',
   Account: 'Account',
   Session: 'Session',
-  VerificationToken: 'VerificationToken'
+  VerificationToken: 'VerificationToken',
+  Asset: 'Asset',
+  Holdings: 'Holdings',
+  MajorAssetClass: 'MajorAssetClass',
+  AssetClass: 'AssetClass'
 };
 
 /**

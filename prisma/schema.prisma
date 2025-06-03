@@ -66,3 +66,80 @@ model VerificationToken {
 
     @@id([identifier, token])
 }
+
+model Asset {
+    assetId                String    @id
+    assetDescription       String?
+    assetInfo              Json? // JSON string in the input
+    assetInfoType          String?
+    assetMask              String?
+    assetName              String?
+    assetOwnerName         String?
+    balanceAsOf            DateTime?
+    balanceCostBasis       Float?
+    balanceCostFrom        String?
+    balanceCurrent         Float?
+    balanceFrom            String?
+    balancePrice           Float?
+    balancePriceFrom       String?
+    balanceQuantityCurrent Float?
+    beneficiaryComposition Json? // Assuming this could be JSON
+    cognitoId              String?
+    creationDate           DateTime?
+    currencyCode           String?
+    deactivateBy           DateTime?
+    descriptionEstatePlan  String?
+    hasInvestment          Boolean?
+    holdings               Holdings?
+    includeInNetWorth      Boolean?
+    institutionId          Int?
+    institutionName        String?
+    integration            Json? // Assuming this could be JSON
+    integrationAccountId   String?
+    isActive               Boolean?
+    isAsset                Boolean?
+    isFavorite             Boolean?
+    isLinkedVendor         Boolean?
+    lastUpdate             DateTime?
+    lastUpdateAttempt      DateTime?
+    logoName               String?
+    modificationDate       DateTime?
+    nextUpdate             DateTime?
+    nickname               String?
+    note                   String?
+    noteDate               DateTime?
+    ownership              String? // Could be an enum or relation if structure is known
+    primaryAssetCategory   String?
+    status                 String?
+    statusCode             String?
+    userInstitutionId      String?
+    vendorAccountType      String?
+    vendorContainer        String?
+    vendorResponse         Json? // Assuming this could be JSON
+    vendorResponseType     String?
+    wealthAssetType        String?
+    wid                    String?
+}
+
+model Holdings {
+    id                Int               @id @default(autoincrement())
+    assetId           String            @unique // Relation to Asset
+    asset             Asset             @relation(fields: [assetId], references: [assetId])
+    majorAssetClasses MajorAssetClass[]
+}
+
+model MajorAssetClass {
+    id           Int          @id @default(autoincrement())
+    holdingsId   Int // Relation to Holdings
+    holdings     Holdings     @relation(fields: [holdingsId], references: [id])
+    majorClass   String?
+    assetClasses AssetClass[]
+}
+
+model AssetClass {
+    id                Int             @id @default(autoincrement())
+    majorAssetClassId Int // Relation to MajorAssetClass
+    majorAssetClass   MajorAssetClass @relation(fields: [majorAssetClassId], references: [id])
+    minorAssetClass   String?
+    value             Float?
+}

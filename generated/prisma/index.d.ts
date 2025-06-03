@@ -38,6 +38,26 @@ export type Session = $Result.DefaultSelection<Prisma.$SessionPayload>
  * 
  */
 export type VerificationToken = $Result.DefaultSelection<Prisma.$VerificationTokenPayload>
+/**
+ * Model Asset
+ * 
+ */
+export type Asset = $Result.DefaultSelection<Prisma.$AssetPayload>
+/**
+ * Model Holdings
+ * 
+ */
+export type Holdings = $Result.DefaultSelection<Prisma.$HoldingsPayload>
+/**
+ * Model MajorAssetClass
+ * 
+ */
+export type MajorAssetClass = $Result.DefaultSelection<Prisma.$MajorAssetClassPayload>
+/**
+ * Model AssetClass
+ * 
+ */
+export type AssetClass = $Result.DefaultSelection<Prisma.$AssetClassPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -213,6 +233,46 @@ export class PrismaClient<
     * ```
     */
   get verificationToken(): Prisma.VerificationTokenDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.asset`: Exposes CRUD operations for the **Asset** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Assets
+    * const assets = await prisma.asset.findMany()
+    * ```
+    */
+  get asset(): Prisma.AssetDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.holdings`: Exposes CRUD operations for the **Holdings** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Holdings
+    * const holdings = await prisma.holdings.findMany()
+    * ```
+    */
+  get holdings(): Prisma.HoldingsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.majorAssetClass`: Exposes CRUD operations for the **MajorAssetClass** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more MajorAssetClasses
+    * const majorAssetClasses = await prisma.majorAssetClass.findMany()
+    * ```
+    */
+  get majorAssetClass(): Prisma.MajorAssetClassDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.assetClass`: Exposes CRUD operations for the **AssetClass** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more AssetClasses
+    * const assetClasses = await prisma.assetClass.findMany()
+    * ```
+    */
+  get assetClass(): Prisma.AssetClassDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -657,7 +717,11 @@ export namespace Prisma {
     User: 'User',
     Account: 'Account',
     Session: 'Session',
-    VerificationToken: 'VerificationToken'
+    VerificationToken: 'VerificationToken',
+    Asset: 'Asset',
+    Holdings: 'Holdings',
+    MajorAssetClass: 'MajorAssetClass',
+    AssetClass: 'AssetClass'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -676,7 +740,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "defaultUser" | "user" | "account" | "session" | "verificationToken"
+      modelProps: "defaultUser" | "user" | "account" | "session" | "verificationToken" | "asset" | "holdings" | "majorAssetClass" | "assetClass"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1050,6 +1114,302 @@ export namespace Prisma {
           }
         }
       }
+      Asset: {
+        payload: Prisma.$AssetPayload<ExtArgs>
+        fields: Prisma.AssetFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.AssetFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.AssetFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>
+          }
+          findFirst: {
+            args: Prisma.AssetFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.AssetFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>
+          }
+          findMany: {
+            args: Prisma.AssetFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>[]
+          }
+          create: {
+            args: Prisma.AssetCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>
+          }
+          createMany: {
+            args: Prisma.AssetCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.AssetCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>[]
+          }
+          delete: {
+            args: Prisma.AssetDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>
+          }
+          update: {
+            args: Prisma.AssetUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>
+          }
+          deleteMany: {
+            args: Prisma.AssetDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.AssetUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.AssetUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>[]
+          }
+          upsert: {
+            args: Prisma.AssetUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetPayload>
+          }
+          aggregate: {
+            args: Prisma.AssetAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAsset>
+          }
+          groupBy: {
+            args: Prisma.AssetGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AssetGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.AssetCountArgs<ExtArgs>
+            result: $Utils.Optional<AssetCountAggregateOutputType> | number
+          }
+        }
+      }
+      Holdings: {
+        payload: Prisma.$HoldingsPayload<ExtArgs>
+        fields: Prisma.HoldingsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HoldingsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HoldingsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>
+          }
+          findFirst: {
+            args: Prisma.HoldingsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HoldingsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>
+          }
+          findMany: {
+            args: Prisma.HoldingsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>[]
+          }
+          create: {
+            args: Prisma.HoldingsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>
+          }
+          createMany: {
+            args: Prisma.HoldingsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HoldingsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>[]
+          }
+          delete: {
+            args: Prisma.HoldingsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>
+          }
+          update: {
+            args: Prisma.HoldingsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>
+          }
+          deleteMany: {
+            args: Prisma.HoldingsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HoldingsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HoldingsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>[]
+          }
+          upsert: {
+            args: Prisma.HoldingsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HoldingsPayload>
+          }
+          aggregate: {
+            args: Prisma.HoldingsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHoldings>
+          }
+          groupBy: {
+            args: Prisma.HoldingsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HoldingsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HoldingsCountArgs<ExtArgs>
+            result: $Utils.Optional<HoldingsCountAggregateOutputType> | number
+          }
+        }
+      }
+      MajorAssetClass: {
+        payload: Prisma.$MajorAssetClassPayload<ExtArgs>
+        fields: Prisma.MajorAssetClassFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.MajorAssetClassFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.MajorAssetClassFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>
+          }
+          findFirst: {
+            args: Prisma.MajorAssetClassFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.MajorAssetClassFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>
+          }
+          findMany: {
+            args: Prisma.MajorAssetClassFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>[]
+          }
+          create: {
+            args: Prisma.MajorAssetClassCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>
+          }
+          createMany: {
+            args: Prisma.MajorAssetClassCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.MajorAssetClassCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>[]
+          }
+          delete: {
+            args: Prisma.MajorAssetClassDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>
+          }
+          update: {
+            args: Prisma.MajorAssetClassUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>
+          }
+          deleteMany: {
+            args: Prisma.MajorAssetClassDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.MajorAssetClassUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MajorAssetClassUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>[]
+          }
+          upsert: {
+            args: Prisma.MajorAssetClassUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MajorAssetClassPayload>
+          }
+          aggregate: {
+            args: Prisma.MajorAssetClassAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMajorAssetClass>
+          }
+          groupBy: {
+            args: Prisma.MajorAssetClassGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MajorAssetClassGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.MajorAssetClassCountArgs<ExtArgs>
+            result: $Utils.Optional<MajorAssetClassCountAggregateOutputType> | number
+          }
+        }
+      }
+      AssetClass: {
+        payload: Prisma.$AssetClassPayload<ExtArgs>
+        fields: Prisma.AssetClassFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.AssetClassFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.AssetClassFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>
+          }
+          findFirst: {
+            args: Prisma.AssetClassFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.AssetClassFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>
+          }
+          findMany: {
+            args: Prisma.AssetClassFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>[]
+          }
+          create: {
+            args: Prisma.AssetClassCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>
+          }
+          createMany: {
+            args: Prisma.AssetClassCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.AssetClassCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>[]
+          }
+          delete: {
+            args: Prisma.AssetClassDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>
+          }
+          update: {
+            args: Prisma.AssetClassUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>
+          }
+          deleteMany: {
+            args: Prisma.AssetClassDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.AssetClassUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.AssetClassUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>[]
+          }
+          upsert: {
+            args: Prisma.AssetClassUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AssetClassPayload>
+          }
+          aggregate: {
+            args: Prisma.AssetClassAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAssetClass>
+          }
+          groupBy: {
+            args: Prisma.AssetClassGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AssetClassGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.AssetClassCountArgs<ExtArgs>
+            result: $Utils.Optional<AssetClassCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1139,6 +1499,10 @@ export namespace Prisma {
     account?: AccountOmit
     session?: SessionOmit
     verificationToken?: VerificationTokenOmit
+    asset?: AssetOmit
+    holdings?: HoldingsOmit
+    majorAssetClass?: MajorAssetClassOmit
+    assetClass?: AssetClassOmit
   }
 
   /* Types for Logging */
@@ -1265,6 +1629,68 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: SessionWhereInput
+  }
+
+
+  /**
+   * Count Type HoldingsCountOutputType
+   */
+
+  export type HoldingsCountOutputType = {
+    majorAssetClasses: number
+  }
+
+  export type HoldingsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    majorAssetClasses?: boolean | HoldingsCountOutputTypeCountMajorAssetClassesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * HoldingsCountOutputType without action
+   */
+  export type HoldingsCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HoldingsCountOutputType
+     */
+    select?: HoldingsCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * HoldingsCountOutputType without action
+   */
+  export type HoldingsCountOutputTypeCountMajorAssetClassesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MajorAssetClassWhereInput
+  }
+
+
+  /**
+   * Count Type MajorAssetClassCountOutputType
+   */
+
+  export type MajorAssetClassCountOutputType = {
+    assetClasses: number
+  }
+
+  export type MajorAssetClassCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    assetClasses?: boolean | MajorAssetClassCountOutputTypeCountAssetClassesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * MajorAssetClassCountOutputType without action
+   */
+  export type MajorAssetClassCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClassCountOutputType
+     */
+    select?: MajorAssetClassCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * MajorAssetClassCountOutputType without action
+   */
+  export type MajorAssetClassCountOutputTypeCountAssetClassesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AssetClassWhereInput
   }
 
 
@@ -6636,6 +7062,4958 @@ export namespace Prisma {
 
 
   /**
+   * Model Asset
+   */
+
+  export type AggregateAsset = {
+    _count: AssetCountAggregateOutputType | null
+    _avg: AssetAvgAggregateOutputType | null
+    _sum: AssetSumAggregateOutputType | null
+    _min: AssetMinAggregateOutputType | null
+    _max: AssetMaxAggregateOutputType | null
+  }
+
+  export type AssetAvgAggregateOutputType = {
+    balanceCostBasis: number | null
+    balanceCurrent: number | null
+    balancePrice: number | null
+    balanceQuantityCurrent: number | null
+    institutionId: number | null
+  }
+
+  export type AssetSumAggregateOutputType = {
+    balanceCostBasis: number | null
+    balanceCurrent: number | null
+    balancePrice: number | null
+    balanceQuantityCurrent: number | null
+    institutionId: number | null
+  }
+
+  export type AssetMinAggregateOutputType = {
+    assetId: string | null
+    assetDescription: string | null
+    assetInfoType: string | null
+    assetMask: string | null
+    assetName: string | null
+    assetOwnerName: string | null
+    balanceAsOf: Date | null
+    balanceCostBasis: number | null
+    balanceCostFrom: string | null
+    balanceCurrent: number | null
+    balanceFrom: string | null
+    balancePrice: number | null
+    balancePriceFrom: string | null
+    balanceQuantityCurrent: number | null
+    cognitoId: string | null
+    creationDate: Date | null
+    currencyCode: string | null
+    deactivateBy: Date | null
+    descriptionEstatePlan: string | null
+    hasInvestment: boolean | null
+    includeInNetWorth: boolean | null
+    institutionId: number | null
+    institutionName: string | null
+    integrationAccountId: string | null
+    isActive: boolean | null
+    isAsset: boolean | null
+    isFavorite: boolean | null
+    isLinkedVendor: boolean | null
+    lastUpdate: Date | null
+    lastUpdateAttempt: Date | null
+    logoName: string | null
+    modificationDate: Date | null
+    nextUpdate: Date | null
+    nickname: string | null
+    note: string | null
+    noteDate: Date | null
+    ownership: string | null
+    primaryAssetCategory: string | null
+    status: string | null
+    statusCode: string | null
+    userInstitutionId: string | null
+    vendorAccountType: string | null
+    vendorContainer: string | null
+    vendorResponseType: string | null
+    wealthAssetType: string | null
+    wid: string | null
+  }
+
+  export type AssetMaxAggregateOutputType = {
+    assetId: string | null
+    assetDescription: string | null
+    assetInfoType: string | null
+    assetMask: string | null
+    assetName: string | null
+    assetOwnerName: string | null
+    balanceAsOf: Date | null
+    balanceCostBasis: number | null
+    balanceCostFrom: string | null
+    balanceCurrent: number | null
+    balanceFrom: string | null
+    balancePrice: number | null
+    balancePriceFrom: string | null
+    balanceQuantityCurrent: number | null
+    cognitoId: string | null
+    creationDate: Date | null
+    currencyCode: string | null
+    deactivateBy: Date | null
+    descriptionEstatePlan: string | null
+    hasInvestment: boolean | null
+    includeInNetWorth: boolean | null
+    institutionId: number | null
+    institutionName: string | null
+    integrationAccountId: string | null
+    isActive: boolean | null
+    isAsset: boolean | null
+    isFavorite: boolean | null
+    isLinkedVendor: boolean | null
+    lastUpdate: Date | null
+    lastUpdateAttempt: Date | null
+    logoName: string | null
+    modificationDate: Date | null
+    nextUpdate: Date | null
+    nickname: string | null
+    note: string | null
+    noteDate: Date | null
+    ownership: string | null
+    primaryAssetCategory: string | null
+    status: string | null
+    statusCode: string | null
+    userInstitutionId: string | null
+    vendorAccountType: string | null
+    vendorContainer: string | null
+    vendorResponseType: string | null
+    wealthAssetType: string | null
+    wid: string | null
+  }
+
+  export type AssetCountAggregateOutputType = {
+    assetId: number
+    assetDescription: number
+    assetInfo: number
+    assetInfoType: number
+    assetMask: number
+    assetName: number
+    assetOwnerName: number
+    balanceAsOf: number
+    balanceCostBasis: number
+    balanceCostFrom: number
+    balanceCurrent: number
+    balanceFrom: number
+    balancePrice: number
+    balancePriceFrom: number
+    balanceQuantityCurrent: number
+    beneficiaryComposition: number
+    cognitoId: number
+    creationDate: number
+    currencyCode: number
+    deactivateBy: number
+    descriptionEstatePlan: number
+    hasInvestment: number
+    includeInNetWorth: number
+    institutionId: number
+    institutionName: number
+    integration: number
+    integrationAccountId: number
+    isActive: number
+    isAsset: number
+    isFavorite: number
+    isLinkedVendor: number
+    lastUpdate: number
+    lastUpdateAttempt: number
+    logoName: number
+    modificationDate: number
+    nextUpdate: number
+    nickname: number
+    note: number
+    noteDate: number
+    ownership: number
+    primaryAssetCategory: number
+    status: number
+    statusCode: number
+    userInstitutionId: number
+    vendorAccountType: number
+    vendorContainer: number
+    vendorResponse: number
+    vendorResponseType: number
+    wealthAssetType: number
+    wid: number
+    _all: number
+  }
+
+
+  export type AssetAvgAggregateInputType = {
+    balanceCostBasis?: true
+    balanceCurrent?: true
+    balancePrice?: true
+    balanceQuantityCurrent?: true
+    institutionId?: true
+  }
+
+  export type AssetSumAggregateInputType = {
+    balanceCostBasis?: true
+    balanceCurrent?: true
+    balancePrice?: true
+    balanceQuantityCurrent?: true
+    institutionId?: true
+  }
+
+  export type AssetMinAggregateInputType = {
+    assetId?: true
+    assetDescription?: true
+    assetInfoType?: true
+    assetMask?: true
+    assetName?: true
+    assetOwnerName?: true
+    balanceAsOf?: true
+    balanceCostBasis?: true
+    balanceCostFrom?: true
+    balanceCurrent?: true
+    balanceFrom?: true
+    balancePrice?: true
+    balancePriceFrom?: true
+    balanceQuantityCurrent?: true
+    cognitoId?: true
+    creationDate?: true
+    currencyCode?: true
+    deactivateBy?: true
+    descriptionEstatePlan?: true
+    hasInvestment?: true
+    includeInNetWorth?: true
+    institutionId?: true
+    institutionName?: true
+    integrationAccountId?: true
+    isActive?: true
+    isAsset?: true
+    isFavorite?: true
+    isLinkedVendor?: true
+    lastUpdate?: true
+    lastUpdateAttempt?: true
+    logoName?: true
+    modificationDate?: true
+    nextUpdate?: true
+    nickname?: true
+    note?: true
+    noteDate?: true
+    ownership?: true
+    primaryAssetCategory?: true
+    status?: true
+    statusCode?: true
+    userInstitutionId?: true
+    vendorAccountType?: true
+    vendorContainer?: true
+    vendorResponseType?: true
+    wealthAssetType?: true
+    wid?: true
+  }
+
+  export type AssetMaxAggregateInputType = {
+    assetId?: true
+    assetDescription?: true
+    assetInfoType?: true
+    assetMask?: true
+    assetName?: true
+    assetOwnerName?: true
+    balanceAsOf?: true
+    balanceCostBasis?: true
+    balanceCostFrom?: true
+    balanceCurrent?: true
+    balanceFrom?: true
+    balancePrice?: true
+    balancePriceFrom?: true
+    balanceQuantityCurrent?: true
+    cognitoId?: true
+    creationDate?: true
+    currencyCode?: true
+    deactivateBy?: true
+    descriptionEstatePlan?: true
+    hasInvestment?: true
+    includeInNetWorth?: true
+    institutionId?: true
+    institutionName?: true
+    integrationAccountId?: true
+    isActive?: true
+    isAsset?: true
+    isFavorite?: true
+    isLinkedVendor?: true
+    lastUpdate?: true
+    lastUpdateAttempt?: true
+    logoName?: true
+    modificationDate?: true
+    nextUpdate?: true
+    nickname?: true
+    note?: true
+    noteDate?: true
+    ownership?: true
+    primaryAssetCategory?: true
+    status?: true
+    statusCode?: true
+    userInstitutionId?: true
+    vendorAccountType?: true
+    vendorContainer?: true
+    vendorResponseType?: true
+    wealthAssetType?: true
+    wid?: true
+  }
+
+  export type AssetCountAggregateInputType = {
+    assetId?: true
+    assetDescription?: true
+    assetInfo?: true
+    assetInfoType?: true
+    assetMask?: true
+    assetName?: true
+    assetOwnerName?: true
+    balanceAsOf?: true
+    balanceCostBasis?: true
+    balanceCostFrom?: true
+    balanceCurrent?: true
+    balanceFrom?: true
+    balancePrice?: true
+    balancePriceFrom?: true
+    balanceQuantityCurrent?: true
+    beneficiaryComposition?: true
+    cognitoId?: true
+    creationDate?: true
+    currencyCode?: true
+    deactivateBy?: true
+    descriptionEstatePlan?: true
+    hasInvestment?: true
+    includeInNetWorth?: true
+    institutionId?: true
+    institutionName?: true
+    integration?: true
+    integrationAccountId?: true
+    isActive?: true
+    isAsset?: true
+    isFavorite?: true
+    isLinkedVendor?: true
+    lastUpdate?: true
+    lastUpdateAttempt?: true
+    logoName?: true
+    modificationDate?: true
+    nextUpdate?: true
+    nickname?: true
+    note?: true
+    noteDate?: true
+    ownership?: true
+    primaryAssetCategory?: true
+    status?: true
+    statusCode?: true
+    userInstitutionId?: true
+    vendorAccountType?: true
+    vendorContainer?: true
+    vendorResponse?: true
+    vendorResponseType?: true
+    wealthAssetType?: true
+    wid?: true
+    _all?: true
+  }
+
+  export type AssetAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Asset to aggregate.
+     */
+    where?: AssetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Assets to fetch.
+     */
+    orderBy?: AssetOrderByWithRelationInput | AssetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: AssetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Assets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Assets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Assets
+    **/
+    _count?: true | AssetCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: AssetAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: AssetSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: AssetMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: AssetMaxAggregateInputType
+  }
+
+  export type GetAssetAggregateType<T extends AssetAggregateArgs> = {
+        [P in keyof T & keyof AggregateAsset]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAsset[P]>
+      : GetScalarType<T[P], AggregateAsset[P]>
+  }
+
+
+
+
+  export type AssetGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AssetWhereInput
+    orderBy?: AssetOrderByWithAggregationInput | AssetOrderByWithAggregationInput[]
+    by: AssetScalarFieldEnum[] | AssetScalarFieldEnum
+    having?: AssetScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: AssetCountAggregateInputType | true
+    _avg?: AssetAvgAggregateInputType
+    _sum?: AssetSumAggregateInputType
+    _min?: AssetMinAggregateInputType
+    _max?: AssetMaxAggregateInputType
+  }
+
+  export type AssetGroupByOutputType = {
+    assetId: string
+    assetDescription: string | null
+    assetInfo: JsonValue | null
+    assetInfoType: string | null
+    assetMask: string | null
+    assetName: string | null
+    assetOwnerName: string | null
+    balanceAsOf: Date | null
+    balanceCostBasis: number | null
+    balanceCostFrom: string | null
+    balanceCurrent: number | null
+    balanceFrom: string | null
+    balancePrice: number | null
+    balancePriceFrom: string | null
+    balanceQuantityCurrent: number | null
+    beneficiaryComposition: JsonValue | null
+    cognitoId: string | null
+    creationDate: Date | null
+    currencyCode: string | null
+    deactivateBy: Date | null
+    descriptionEstatePlan: string | null
+    hasInvestment: boolean | null
+    includeInNetWorth: boolean | null
+    institutionId: number | null
+    institutionName: string | null
+    integration: JsonValue | null
+    integrationAccountId: string | null
+    isActive: boolean | null
+    isAsset: boolean | null
+    isFavorite: boolean | null
+    isLinkedVendor: boolean | null
+    lastUpdate: Date | null
+    lastUpdateAttempt: Date | null
+    logoName: string | null
+    modificationDate: Date | null
+    nextUpdate: Date | null
+    nickname: string | null
+    note: string | null
+    noteDate: Date | null
+    ownership: string | null
+    primaryAssetCategory: string | null
+    status: string | null
+    statusCode: string | null
+    userInstitutionId: string | null
+    vendorAccountType: string | null
+    vendorContainer: string | null
+    vendorResponse: JsonValue | null
+    vendorResponseType: string | null
+    wealthAssetType: string | null
+    wid: string | null
+    _count: AssetCountAggregateOutputType | null
+    _avg: AssetAvgAggregateOutputType | null
+    _sum: AssetSumAggregateOutputType | null
+    _min: AssetMinAggregateOutputType | null
+    _max: AssetMaxAggregateOutputType | null
+  }
+
+  type GetAssetGroupByPayload<T extends AssetGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<AssetGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof AssetGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], AssetGroupByOutputType[P]>
+            : GetScalarType<T[P], AssetGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type AssetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    assetId?: boolean
+    assetDescription?: boolean
+    assetInfo?: boolean
+    assetInfoType?: boolean
+    assetMask?: boolean
+    assetName?: boolean
+    assetOwnerName?: boolean
+    balanceAsOf?: boolean
+    balanceCostBasis?: boolean
+    balanceCostFrom?: boolean
+    balanceCurrent?: boolean
+    balanceFrom?: boolean
+    balancePrice?: boolean
+    balancePriceFrom?: boolean
+    balanceQuantityCurrent?: boolean
+    beneficiaryComposition?: boolean
+    cognitoId?: boolean
+    creationDate?: boolean
+    currencyCode?: boolean
+    deactivateBy?: boolean
+    descriptionEstatePlan?: boolean
+    hasInvestment?: boolean
+    includeInNetWorth?: boolean
+    institutionId?: boolean
+    institutionName?: boolean
+    integration?: boolean
+    integrationAccountId?: boolean
+    isActive?: boolean
+    isAsset?: boolean
+    isFavorite?: boolean
+    isLinkedVendor?: boolean
+    lastUpdate?: boolean
+    lastUpdateAttempt?: boolean
+    logoName?: boolean
+    modificationDate?: boolean
+    nextUpdate?: boolean
+    nickname?: boolean
+    note?: boolean
+    noteDate?: boolean
+    ownership?: boolean
+    primaryAssetCategory?: boolean
+    status?: boolean
+    statusCode?: boolean
+    userInstitutionId?: boolean
+    vendorAccountType?: boolean
+    vendorContainer?: boolean
+    vendorResponse?: boolean
+    vendorResponseType?: boolean
+    wealthAssetType?: boolean
+    wid?: boolean
+    holdings?: boolean | Asset$holdingsArgs<ExtArgs>
+  }, ExtArgs["result"]["asset"]>
+
+  export type AssetSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    assetId?: boolean
+    assetDescription?: boolean
+    assetInfo?: boolean
+    assetInfoType?: boolean
+    assetMask?: boolean
+    assetName?: boolean
+    assetOwnerName?: boolean
+    balanceAsOf?: boolean
+    balanceCostBasis?: boolean
+    balanceCostFrom?: boolean
+    balanceCurrent?: boolean
+    balanceFrom?: boolean
+    balancePrice?: boolean
+    balancePriceFrom?: boolean
+    balanceQuantityCurrent?: boolean
+    beneficiaryComposition?: boolean
+    cognitoId?: boolean
+    creationDate?: boolean
+    currencyCode?: boolean
+    deactivateBy?: boolean
+    descriptionEstatePlan?: boolean
+    hasInvestment?: boolean
+    includeInNetWorth?: boolean
+    institutionId?: boolean
+    institutionName?: boolean
+    integration?: boolean
+    integrationAccountId?: boolean
+    isActive?: boolean
+    isAsset?: boolean
+    isFavorite?: boolean
+    isLinkedVendor?: boolean
+    lastUpdate?: boolean
+    lastUpdateAttempt?: boolean
+    logoName?: boolean
+    modificationDate?: boolean
+    nextUpdate?: boolean
+    nickname?: boolean
+    note?: boolean
+    noteDate?: boolean
+    ownership?: boolean
+    primaryAssetCategory?: boolean
+    status?: boolean
+    statusCode?: boolean
+    userInstitutionId?: boolean
+    vendorAccountType?: boolean
+    vendorContainer?: boolean
+    vendorResponse?: boolean
+    vendorResponseType?: boolean
+    wealthAssetType?: boolean
+    wid?: boolean
+  }, ExtArgs["result"]["asset"]>
+
+  export type AssetSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    assetId?: boolean
+    assetDescription?: boolean
+    assetInfo?: boolean
+    assetInfoType?: boolean
+    assetMask?: boolean
+    assetName?: boolean
+    assetOwnerName?: boolean
+    balanceAsOf?: boolean
+    balanceCostBasis?: boolean
+    balanceCostFrom?: boolean
+    balanceCurrent?: boolean
+    balanceFrom?: boolean
+    balancePrice?: boolean
+    balancePriceFrom?: boolean
+    balanceQuantityCurrent?: boolean
+    beneficiaryComposition?: boolean
+    cognitoId?: boolean
+    creationDate?: boolean
+    currencyCode?: boolean
+    deactivateBy?: boolean
+    descriptionEstatePlan?: boolean
+    hasInvestment?: boolean
+    includeInNetWorth?: boolean
+    institutionId?: boolean
+    institutionName?: boolean
+    integration?: boolean
+    integrationAccountId?: boolean
+    isActive?: boolean
+    isAsset?: boolean
+    isFavorite?: boolean
+    isLinkedVendor?: boolean
+    lastUpdate?: boolean
+    lastUpdateAttempt?: boolean
+    logoName?: boolean
+    modificationDate?: boolean
+    nextUpdate?: boolean
+    nickname?: boolean
+    note?: boolean
+    noteDate?: boolean
+    ownership?: boolean
+    primaryAssetCategory?: boolean
+    status?: boolean
+    statusCode?: boolean
+    userInstitutionId?: boolean
+    vendorAccountType?: boolean
+    vendorContainer?: boolean
+    vendorResponse?: boolean
+    vendorResponseType?: boolean
+    wealthAssetType?: boolean
+    wid?: boolean
+  }, ExtArgs["result"]["asset"]>
+
+  export type AssetSelectScalar = {
+    assetId?: boolean
+    assetDescription?: boolean
+    assetInfo?: boolean
+    assetInfoType?: boolean
+    assetMask?: boolean
+    assetName?: boolean
+    assetOwnerName?: boolean
+    balanceAsOf?: boolean
+    balanceCostBasis?: boolean
+    balanceCostFrom?: boolean
+    balanceCurrent?: boolean
+    balanceFrom?: boolean
+    balancePrice?: boolean
+    balancePriceFrom?: boolean
+    balanceQuantityCurrent?: boolean
+    beneficiaryComposition?: boolean
+    cognitoId?: boolean
+    creationDate?: boolean
+    currencyCode?: boolean
+    deactivateBy?: boolean
+    descriptionEstatePlan?: boolean
+    hasInvestment?: boolean
+    includeInNetWorth?: boolean
+    institutionId?: boolean
+    institutionName?: boolean
+    integration?: boolean
+    integrationAccountId?: boolean
+    isActive?: boolean
+    isAsset?: boolean
+    isFavorite?: boolean
+    isLinkedVendor?: boolean
+    lastUpdate?: boolean
+    lastUpdateAttempt?: boolean
+    logoName?: boolean
+    modificationDate?: boolean
+    nextUpdate?: boolean
+    nickname?: boolean
+    note?: boolean
+    noteDate?: boolean
+    ownership?: boolean
+    primaryAssetCategory?: boolean
+    status?: boolean
+    statusCode?: boolean
+    userInstitutionId?: boolean
+    vendorAccountType?: boolean
+    vendorContainer?: boolean
+    vendorResponse?: boolean
+    vendorResponseType?: boolean
+    wealthAssetType?: boolean
+    wid?: boolean
+  }
+
+  export type AssetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"assetId" | "assetDescription" | "assetInfo" | "assetInfoType" | "assetMask" | "assetName" | "assetOwnerName" | "balanceAsOf" | "balanceCostBasis" | "balanceCostFrom" | "balanceCurrent" | "balanceFrom" | "balancePrice" | "balancePriceFrom" | "balanceQuantityCurrent" | "beneficiaryComposition" | "cognitoId" | "creationDate" | "currencyCode" | "deactivateBy" | "descriptionEstatePlan" | "hasInvestment" | "includeInNetWorth" | "institutionId" | "institutionName" | "integration" | "integrationAccountId" | "isActive" | "isAsset" | "isFavorite" | "isLinkedVendor" | "lastUpdate" | "lastUpdateAttempt" | "logoName" | "modificationDate" | "nextUpdate" | "nickname" | "note" | "noteDate" | "ownership" | "primaryAssetCategory" | "status" | "statusCode" | "userInstitutionId" | "vendorAccountType" | "vendorContainer" | "vendorResponse" | "vendorResponseType" | "wealthAssetType" | "wid", ExtArgs["result"]["asset"]>
+  export type AssetInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    holdings?: boolean | Asset$holdingsArgs<ExtArgs>
+  }
+  export type AssetIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type AssetIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $AssetPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Asset"
+    objects: {
+      holdings: Prisma.$HoldingsPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      assetId: string
+      assetDescription: string | null
+      assetInfo: Prisma.JsonValue | null
+      assetInfoType: string | null
+      assetMask: string | null
+      assetName: string | null
+      assetOwnerName: string | null
+      balanceAsOf: Date | null
+      balanceCostBasis: number | null
+      balanceCostFrom: string | null
+      balanceCurrent: number | null
+      balanceFrom: string | null
+      balancePrice: number | null
+      balancePriceFrom: string | null
+      balanceQuantityCurrent: number | null
+      beneficiaryComposition: Prisma.JsonValue | null
+      cognitoId: string | null
+      creationDate: Date | null
+      currencyCode: string | null
+      deactivateBy: Date | null
+      descriptionEstatePlan: string | null
+      hasInvestment: boolean | null
+      includeInNetWorth: boolean | null
+      institutionId: number | null
+      institutionName: string | null
+      integration: Prisma.JsonValue | null
+      integrationAccountId: string | null
+      isActive: boolean | null
+      isAsset: boolean | null
+      isFavorite: boolean | null
+      isLinkedVendor: boolean | null
+      lastUpdate: Date | null
+      lastUpdateAttempt: Date | null
+      logoName: string | null
+      modificationDate: Date | null
+      nextUpdate: Date | null
+      nickname: string | null
+      note: string | null
+      noteDate: Date | null
+      ownership: string | null
+      primaryAssetCategory: string | null
+      status: string | null
+      statusCode: string | null
+      userInstitutionId: string | null
+      vendorAccountType: string | null
+      vendorContainer: string | null
+      vendorResponse: Prisma.JsonValue | null
+      vendorResponseType: string | null
+      wealthAssetType: string | null
+      wid: string | null
+    }, ExtArgs["result"]["asset"]>
+    composites: {}
+  }
+
+  type AssetGetPayload<S extends boolean | null | undefined | AssetDefaultArgs> = $Result.GetResult<Prisma.$AssetPayload, S>
+
+  type AssetCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<AssetFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: AssetCountAggregateInputType | true
+    }
+
+  export interface AssetDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Asset'], meta: { name: 'Asset' } }
+    /**
+     * Find zero or one Asset that matches the filter.
+     * @param {AssetFindUniqueArgs} args - Arguments to find a Asset
+     * @example
+     * // Get one Asset
+     * const asset = await prisma.asset.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends AssetFindUniqueArgs>(args: SelectSubset<T, AssetFindUniqueArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Asset that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {AssetFindUniqueOrThrowArgs} args - Arguments to find a Asset
+     * @example
+     * // Get one Asset
+     * const asset = await prisma.asset.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends AssetFindUniqueOrThrowArgs>(args: SelectSubset<T, AssetFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Asset that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetFindFirstArgs} args - Arguments to find a Asset
+     * @example
+     * // Get one Asset
+     * const asset = await prisma.asset.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends AssetFindFirstArgs>(args?: SelectSubset<T, AssetFindFirstArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Asset that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetFindFirstOrThrowArgs} args - Arguments to find a Asset
+     * @example
+     * // Get one Asset
+     * const asset = await prisma.asset.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends AssetFindFirstOrThrowArgs>(args?: SelectSubset<T, AssetFindFirstOrThrowArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Assets that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Assets
+     * const assets = await prisma.asset.findMany()
+     * 
+     * // Get first 10 Assets
+     * const assets = await prisma.asset.findMany({ take: 10 })
+     * 
+     * // Only select the `assetId`
+     * const assetWithAssetIdOnly = await prisma.asset.findMany({ select: { assetId: true } })
+     * 
+     */
+    findMany<T extends AssetFindManyArgs>(args?: SelectSubset<T, AssetFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Asset.
+     * @param {AssetCreateArgs} args - Arguments to create a Asset.
+     * @example
+     * // Create one Asset
+     * const Asset = await prisma.asset.create({
+     *   data: {
+     *     // ... data to create a Asset
+     *   }
+     * })
+     * 
+     */
+    create<T extends AssetCreateArgs>(args: SelectSubset<T, AssetCreateArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Assets.
+     * @param {AssetCreateManyArgs} args - Arguments to create many Assets.
+     * @example
+     * // Create many Assets
+     * const asset = await prisma.asset.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends AssetCreateManyArgs>(args?: SelectSubset<T, AssetCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Assets and returns the data saved in the database.
+     * @param {AssetCreateManyAndReturnArgs} args - Arguments to create many Assets.
+     * @example
+     * // Create many Assets
+     * const asset = await prisma.asset.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Assets and only return the `assetId`
+     * const assetWithAssetIdOnly = await prisma.asset.createManyAndReturn({
+     *   select: { assetId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends AssetCreateManyAndReturnArgs>(args?: SelectSubset<T, AssetCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Asset.
+     * @param {AssetDeleteArgs} args - Arguments to delete one Asset.
+     * @example
+     * // Delete one Asset
+     * const Asset = await prisma.asset.delete({
+     *   where: {
+     *     // ... filter to delete one Asset
+     *   }
+     * })
+     * 
+     */
+    delete<T extends AssetDeleteArgs>(args: SelectSubset<T, AssetDeleteArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Asset.
+     * @param {AssetUpdateArgs} args - Arguments to update one Asset.
+     * @example
+     * // Update one Asset
+     * const asset = await prisma.asset.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends AssetUpdateArgs>(args: SelectSubset<T, AssetUpdateArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Assets.
+     * @param {AssetDeleteManyArgs} args - Arguments to filter Assets to delete.
+     * @example
+     * // Delete a few Assets
+     * const { count } = await prisma.asset.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends AssetDeleteManyArgs>(args?: SelectSubset<T, AssetDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Assets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Assets
+     * const asset = await prisma.asset.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends AssetUpdateManyArgs>(args: SelectSubset<T, AssetUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Assets and returns the data updated in the database.
+     * @param {AssetUpdateManyAndReturnArgs} args - Arguments to update many Assets.
+     * @example
+     * // Update many Assets
+     * const asset = await prisma.asset.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Assets and only return the `assetId`
+     * const assetWithAssetIdOnly = await prisma.asset.updateManyAndReturn({
+     *   select: { assetId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends AssetUpdateManyAndReturnArgs>(args: SelectSubset<T, AssetUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Asset.
+     * @param {AssetUpsertArgs} args - Arguments to update or create a Asset.
+     * @example
+     * // Update or create a Asset
+     * const asset = await prisma.asset.upsert({
+     *   create: {
+     *     // ... data to create a Asset
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Asset we want to update
+     *   }
+     * })
+     */
+    upsert<T extends AssetUpsertArgs>(args: SelectSubset<T, AssetUpsertArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Assets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetCountArgs} args - Arguments to filter Assets to count.
+     * @example
+     * // Count the number of Assets
+     * const count = await prisma.asset.count({
+     *   where: {
+     *     // ... the filter for the Assets we want to count
+     *   }
+     * })
+    **/
+    count<T extends AssetCountArgs>(
+      args?: Subset<T, AssetCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], AssetCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Asset.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends AssetAggregateArgs>(args: Subset<T, AssetAggregateArgs>): Prisma.PrismaPromise<GetAssetAggregateType<T>>
+
+    /**
+     * Group by Asset.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends AssetGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: AssetGroupByArgs['orderBy'] }
+        : { orderBy?: AssetGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, AssetGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAssetGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Asset model
+   */
+  readonly fields: AssetFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Asset.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__AssetClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    holdings<T extends Asset$holdingsArgs<ExtArgs> = {}>(args?: Subset<T, Asset$holdingsArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Asset model
+   */
+  interface AssetFieldRefs {
+    readonly assetId: FieldRef<"Asset", 'String'>
+    readonly assetDescription: FieldRef<"Asset", 'String'>
+    readonly assetInfo: FieldRef<"Asset", 'Json'>
+    readonly assetInfoType: FieldRef<"Asset", 'String'>
+    readonly assetMask: FieldRef<"Asset", 'String'>
+    readonly assetName: FieldRef<"Asset", 'String'>
+    readonly assetOwnerName: FieldRef<"Asset", 'String'>
+    readonly balanceAsOf: FieldRef<"Asset", 'DateTime'>
+    readonly balanceCostBasis: FieldRef<"Asset", 'Float'>
+    readonly balanceCostFrom: FieldRef<"Asset", 'String'>
+    readonly balanceCurrent: FieldRef<"Asset", 'Float'>
+    readonly balanceFrom: FieldRef<"Asset", 'String'>
+    readonly balancePrice: FieldRef<"Asset", 'Float'>
+    readonly balancePriceFrom: FieldRef<"Asset", 'String'>
+    readonly balanceQuantityCurrent: FieldRef<"Asset", 'Float'>
+    readonly beneficiaryComposition: FieldRef<"Asset", 'Json'>
+    readonly cognitoId: FieldRef<"Asset", 'String'>
+    readonly creationDate: FieldRef<"Asset", 'DateTime'>
+    readonly currencyCode: FieldRef<"Asset", 'String'>
+    readonly deactivateBy: FieldRef<"Asset", 'DateTime'>
+    readonly descriptionEstatePlan: FieldRef<"Asset", 'String'>
+    readonly hasInvestment: FieldRef<"Asset", 'Boolean'>
+    readonly includeInNetWorth: FieldRef<"Asset", 'Boolean'>
+    readonly institutionId: FieldRef<"Asset", 'Int'>
+    readonly institutionName: FieldRef<"Asset", 'String'>
+    readonly integration: FieldRef<"Asset", 'Json'>
+    readonly integrationAccountId: FieldRef<"Asset", 'String'>
+    readonly isActive: FieldRef<"Asset", 'Boolean'>
+    readonly isAsset: FieldRef<"Asset", 'Boolean'>
+    readonly isFavorite: FieldRef<"Asset", 'Boolean'>
+    readonly isLinkedVendor: FieldRef<"Asset", 'Boolean'>
+    readonly lastUpdate: FieldRef<"Asset", 'DateTime'>
+    readonly lastUpdateAttempt: FieldRef<"Asset", 'DateTime'>
+    readonly logoName: FieldRef<"Asset", 'String'>
+    readonly modificationDate: FieldRef<"Asset", 'DateTime'>
+    readonly nextUpdate: FieldRef<"Asset", 'DateTime'>
+    readonly nickname: FieldRef<"Asset", 'String'>
+    readonly note: FieldRef<"Asset", 'String'>
+    readonly noteDate: FieldRef<"Asset", 'DateTime'>
+    readonly ownership: FieldRef<"Asset", 'String'>
+    readonly primaryAssetCategory: FieldRef<"Asset", 'String'>
+    readonly status: FieldRef<"Asset", 'String'>
+    readonly statusCode: FieldRef<"Asset", 'String'>
+    readonly userInstitutionId: FieldRef<"Asset", 'String'>
+    readonly vendorAccountType: FieldRef<"Asset", 'String'>
+    readonly vendorContainer: FieldRef<"Asset", 'String'>
+    readonly vendorResponse: FieldRef<"Asset", 'Json'>
+    readonly vendorResponseType: FieldRef<"Asset", 'String'>
+    readonly wealthAssetType: FieldRef<"Asset", 'String'>
+    readonly wid: FieldRef<"Asset", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Asset findUnique
+   */
+  export type AssetFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * Filter, which Asset to fetch.
+     */
+    where: AssetWhereUniqueInput
+  }
+
+  /**
+   * Asset findUniqueOrThrow
+   */
+  export type AssetFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * Filter, which Asset to fetch.
+     */
+    where: AssetWhereUniqueInput
+  }
+
+  /**
+   * Asset findFirst
+   */
+  export type AssetFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * Filter, which Asset to fetch.
+     */
+    where?: AssetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Assets to fetch.
+     */
+    orderBy?: AssetOrderByWithRelationInput | AssetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Assets.
+     */
+    cursor?: AssetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Assets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Assets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Assets.
+     */
+    distinct?: AssetScalarFieldEnum | AssetScalarFieldEnum[]
+  }
+
+  /**
+   * Asset findFirstOrThrow
+   */
+  export type AssetFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * Filter, which Asset to fetch.
+     */
+    where?: AssetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Assets to fetch.
+     */
+    orderBy?: AssetOrderByWithRelationInput | AssetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Assets.
+     */
+    cursor?: AssetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Assets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Assets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Assets.
+     */
+    distinct?: AssetScalarFieldEnum | AssetScalarFieldEnum[]
+  }
+
+  /**
+   * Asset findMany
+   */
+  export type AssetFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * Filter, which Assets to fetch.
+     */
+    where?: AssetWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Assets to fetch.
+     */
+    orderBy?: AssetOrderByWithRelationInput | AssetOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Assets.
+     */
+    cursor?: AssetWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Assets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Assets.
+     */
+    skip?: number
+    distinct?: AssetScalarFieldEnum | AssetScalarFieldEnum[]
+  }
+
+  /**
+   * Asset create
+   */
+  export type AssetCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Asset.
+     */
+    data: XOR<AssetCreateInput, AssetUncheckedCreateInput>
+  }
+
+  /**
+   * Asset createMany
+   */
+  export type AssetCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Assets.
+     */
+    data: AssetCreateManyInput | AssetCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Asset createManyAndReturn
+   */
+  export type AssetCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * The data used to create many Assets.
+     */
+    data: AssetCreateManyInput | AssetCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Asset update
+   */
+  export type AssetUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Asset.
+     */
+    data: XOR<AssetUpdateInput, AssetUncheckedUpdateInput>
+    /**
+     * Choose, which Asset to update.
+     */
+    where: AssetWhereUniqueInput
+  }
+
+  /**
+   * Asset updateMany
+   */
+  export type AssetUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Assets.
+     */
+    data: XOR<AssetUpdateManyMutationInput, AssetUncheckedUpdateManyInput>
+    /**
+     * Filter which Assets to update
+     */
+    where?: AssetWhereInput
+    /**
+     * Limit how many Assets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Asset updateManyAndReturn
+   */
+  export type AssetUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * The data used to update Assets.
+     */
+    data: XOR<AssetUpdateManyMutationInput, AssetUncheckedUpdateManyInput>
+    /**
+     * Filter which Assets to update
+     */
+    where?: AssetWhereInput
+    /**
+     * Limit how many Assets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Asset upsert
+   */
+  export type AssetUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Asset to update in case it exists.
+     */
+    where: AssetWhereUniqueInput
+    /**
+     * In case the Asset found by the `where` argument doesn't exist, create a new Asset with this data.
+     */
+    create: XOR<AssetCreateInput, AssetUncheckedCreateInput>
+    /**
+     * In case the Asset was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<AssetUpdateInput, AssetUncheckedUpdateInput>
+  }
+
+  /**
+   * Asset delete
+   */
+  export type AssetDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+    /**
+     * Filter which Asset to delete.
+     */
+    where: AssetWhereUniqueInput
+  }
+
+  /**
+   * Asset deleteMany
+   */
+  export type AssetDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Assets to delete
+     */
+    where?: AssetWhereInput
+    /**
+     * Limit how many Assets to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Asset.holdings
+   */
+  export type Asset$holdingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    where?: HoldingsWhereInput
+  }
+
+  /**
+   * Asset without action
+   */
+  export type AssetDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Asset
+     */
+    select?: AssetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Asset
+     */
+    omit?: AssetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Holdings
+   */
+
+  export type AggregateHoldings = {
+    _count: HoldingsCountAggregateOutputType | null
+    _avg: HoldingsAvgAggregateOutputType | null
+    _sum: HoldingsSumAggregateOutputType | null
+    _min: HoldingsMinAggregateOutputType | null
+    _max: HoldingsMaxAggregateOutputType | null
+  }
+
+  export type HoldingsAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type HoldingsSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type HoldingsMinAggregateOutputType = {
+    id: number | null
+    assetId: string | null
+  }
+
+  export type HoldingsMaxAggregateOutputType = {
+    id: number | null
+    assetId: string | null
+  }
+
+  export type HoldingsCountAggregateOutputType = {
+    id: number
+    assetId: number
+    _all: number
+  }
+
+
+  export type HoldingsAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type HoldingsSumAggregateInputType = {
+    id?: true
+  }
+
+  export type HoldingsMinAggregateInputType = {
+    id?: true
+    assetId?: true
+  }
+
+  export type HoldingsMaxAggregateInputType = {
+    id?: true
+    assetId?: true
+  }
+
+  export type HoldingsCountAggregateInputType = {
+    id?: true
+    assetId?: true
+    _all?: true
+  }
+
+  export type HoldingsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Holdings to aggregate.
+     */
+    where?: HoldingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Holdings to fetch.
+     */
+    orderBy?: HoldingsOrderByWithRelationInput | HoldingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HoldingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Holdings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Holdings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Holdings
+    **/
+    _count?: true | HoldingsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HoldingsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HoldingsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HoldingsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HoldingsMaxAggregateInputType
+  }
+
+  export type GetHoldingsAggregateType<T extends HoldingsAggregateArgs> = {
+        [P in keyof T & keyof AggregateHoldings]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHoldings[P]>
+      : GetScalarType<T[P], AggregateHoldings[P]>
+  }
+
+
+
+
+  export type HoldingsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HoldingsWhereInput
+    orderBy?: HoldingsOrderByWithAggregationInput | HoldingsOrderByWithAggregationInput[]
+    by: HoldingsScalarFieldEnum[] | HoldingsScalarFieldEnum
+    having?: HoldingsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HoldingsCountAggregateInputType | true
+    _avg?: HoldingsAvgAggregateInputType
+    _sum?: HoldingsSumAggregateInputType
+    _min?: HoldingsMinAggregateInputType
+    _max?: HoldingsMaxAggregateInputType
+  }
+
+  export type HoldingsGroupByOutputType = {
+    id: number
+    assetId: string
+    _count: HoldingsCountAggregateOutputType | null
+    _avg: HoldingsAvgAggregateOutputType | null
+    _sum: HoldingsSumAggregateOutputType | null
+    _min: HoldingsMinAggregateOutputType | null
+    _max: HoldingsMaxAggregateOutputType | null
+  }
+
+  type GetHoldingsGroupByPayload<T extends HoldingsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HoldingsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HoldingsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HoldingsGroupByOutputType[P]>
+            : GetScalarType<T[P], HoldingsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HoldingsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    assetId?: boolean
+    asset?: boolean | AssetDefaultArgs<ExtArgs>
+    majorAssetClasses?: boolean | Holdings$majorAssetClassesArgs<ExtArgs>
+    _count?: boolean | HoldingsCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["holdings"]>
+
+  export type HoldingsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    assetId?: boolean
+    asset?: boolean | AssetDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["holdings"]>
+
+  export type HoldingsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    assetId?: boolean
+    asset?: boolean | AssetDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["holdings"]>
+
+  export type HoldingsSelectScalar = {
+    id?: boolean
+    assetId?: boolean
+  }
+
+  export type HoldingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "assetId", ExtArgs["result"]["holdings"]>
+  export type HoldingsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    asset?: boolean | AssetDefaultArgs<ExtArgs>
+    majorAssetClasses?: boolean | Holdings$majorAssetClassesArgs<ExtArgs>
+    _count?: boolean | HoldingsCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type HoldingsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    asset?: boolean | AssetDefaultArgs<ExtArgs>
+  }
+  export type HoldingsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    asset?: boolean | AssetDefaultArgs<ExtArgs>
+  }
+
+  export type $HoldingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Holdings"
+    objects: {
+      asset: Prisma.$AssetPayload<ExtArgs>
+      majorAssetClasses: Prisma.$MajorAssetClassPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      assetId: string
+    }, ExtArgs["result"]["holdings"]>
+    composites: {}
+  }
+
+  type HoldingsGetPayload<S extends boolean | null | undefined | HoldingsDefaultArgs> = $Result.GetResult<Prisma.$HoldingsPayload, S>
+
+  type HoldingsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HoldingsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HoldingsCountAggregateInputType | true
+    }
+
+  export interface HoldingsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Holdings'], meta: { name: 'Holdings' } }
+    /**
+     * Find zero or one Holdings that matches the filter.
+     * @param {HoldingsFindUniqueArgs} args - Arguments to find a Holdings
+     * @example
+     * // Get one Holdings
+     * const holdings = await prisma.holdings.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HoldingsFindUniqueArgs>(args: SelectSubset<T, HoldingsFindUniqueArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Holdings that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HoldingsFindUniqueOrThrowArgs} args - Arguments to find a Holdings
+     * @example
+     * // Get one Holdings
+     * const holdings = await prisma.holdings.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HoldingsFindUniqueOrThrowArgs>(args: SelectSubset<T, HoldingsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Holdings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsFindFirstArgs} args - Arguments to find a Holdings
+     * @example
+     * // Get one Holdings
+     * const holdings = await prisma.holdings.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HoldingsFindFirstArgs>(args?: SelectSubset<T, HoldingsFindFirstArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Holdings that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsFindFirstOrThrowArgs} args - Arguments to find a Holdings
+     * @example
+     * // Get one Holdings
+     * const holdings = await prisma.holdings.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HoldingsFindFirstOrThrowArgs>(args?: SelectSubset<T, HoldingsFindFirstOrThrowArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Holdings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Holdings
+     * const holdings = await prisma.holdings.findMany()
+     * 
+     * // Get first 10 Holdings
+     * const holdings = await prisma.holdings.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const holdingsWithIdOnly = await prisma.holdings.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HoldingsFindManyArgs>(args?: SelectSubset<T, HoldingsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Holdings.
+     * @param {HoldingsCreateArgs} args - Arguments to create a Holdings.
+     * @example
+     * // Create one Holdings
+     * const Holdings = await prisma.holdings.create({
+     *   data: {
+     *     // ... data to create a Holdings
+     *   }
+     * })
+     * 
+     */
+    create<T extends HoldingsCreateArgs>(args: SelectSubset<T, HoldingsCreateArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Holdings.
+     * @param {HoldingsCreateManyArgs} args - Arguments to create many Holdings.
+     * @example
+     * // Create many Holdings
+     * const holdings = await prisma.holdings.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HoldingsCreateManyArgs>(args?: SelectSubset<T, HoldingsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Holdings and returns the data saved in the database.
+     * @param {HoldingsCreateManyAndReturnArgs} args - Arguments to create many Holdings.
+     * @example
+     * // Create many Holdings
+     * const holdings = await prisma.holdings.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Holdings and only return the `id`
+     * const holdingsWithIdOnly = await prisma.holdings.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HoldingsCreateManyAndReturnArgs>(args?: SelectSubset<T, HoldingsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Holdings.
+     * @param {HoldingsDeleteArgs} args - Arguments to delete one Holdings.
+     * @example
+     * // Delete one Holdings
+     * const Holdings = await prisma.holdings.delete({
+     *   where: {
+     *     // ... filter to delete one Holdings
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HoldingsDeleteArgs>(args: SelectSubset<T, HoldingsDeleteArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Holdings.
+     * @param {HoldingsUpdateArgs} args - Arguments to update one Holdings.
+     * @example
+     * // Update one Holdings
+     * const holdings = await prisma.holdings.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HoldingsUpdateArgs>(args: SelectSubset<T, HoldingsUpdateArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Holdings.
+     * @param {HoldingsDeleteManyArgs} args - Arguments to filter Holdings to delete.
+     * @example
+     * // Delete a few Holdings
+     * const { count } = await prisma.holdings.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HoldingsDeleteManyArgs>(args?: SelectSubset<T, HoldingsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Holdings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Holdings
+     * const holdings = await prisma.holdings.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HoldingsUpdateManyArgs>(args: SelectSubset<T, HoldingsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Holdings and returns the data updated in the database.
+     * @param {HoldingsUpdateManyAndReturnArgs} args - Arguments to update many Holdings.
+     * @example
+     * // Update many Holdings
+     * const holdings = await prisma.holdings.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Holdings and only return the `id`
+     * const holdingsWithIdOnly = await prisma.holdings.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HoldingsUpdateManyAndReturnArgs>(args: SelectSubset<T, HoldingsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Holdings.
+     * @param {HoldingsUpsertArgs} args - Arguments to update or create a Holdings.
+     * @example
+     * // Update or create a Holdings
+     * const holdings = await prisma.holdings.upsert({
+     *   create: {
+     *     // ... data to create a Holdings
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Holdings we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HoldingsUpsertArgs>(args: SelectSubset<T, HoldingsUpsertArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Holdings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsCountArgs} args - Arguments to filter Holdings to count.
+     * @example
+     * // Count the number of Holdings
+     * const count = await prisma.holdings.count({
+     *   where: {
+     *     // ... the filter for the Holdings we want to count
+     *   }
+     * })
+    **/
+    count<T extends HoldingsCountArgs>(
+      args?: Subset<T, HoldingsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HoldingsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Holdings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HoldingsAggregateArgs>(args: Subset<T, HoldingsAggregateArgs>): Prisma.PrismaPromise<GetHoldingsAggregateType<T>>
+
+    /**
+     * Group by Holdings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HoldingsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HoldingsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HoldingsGroupByArgs['orderBy'] }
+        : { orderBy?: HoldingsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HoldingsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHoldingsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Holdings model
+   */
+  readonly fields: HoldingsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Holdings.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HoldingsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    asset<T extends AssetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AssetDefaultArgs<ExtArgs>>): Prisma__AssetClient<$Result.GetResult<Prisma.$AssetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    majorAssetClasses<T extends Holdings$majorAssetClassesArgs<ExtArgs> = {}>(args?: Subset<T, Holdings$majorAssetClassesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Holdings model
+   */
+  interface HoldingsFieldRefs {
+    readonly id: FieldRef<"Holdings", 'Int'>
+    readonly assetId: FieldRef<"Holdings", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Holdings findUnique
+   */
+  export type HoldingsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * Filter, which Holdings to fetch.
+     */
+    where: HoldingsWhereUniqueInput
+  }
+
+  /**
+   * Holdings findUniqueOrThrow
+   */
+  export type HoldingsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * Filter, which Holdings to fetch.
+     */
+    where: HoldingsWhereUniqueInput
+  }
+
+  /**
+   * Holdings findFirst
+   */
+  export type HoldingsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * Filter, which Holdings to fetch.
+     */
+    where?: HoldingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Holdings to fetch.
+     */
+    orderBy?: HoldingsOrderByWithRelationInput | HoldingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Holdings.
+     */
+    cursor?: HoldingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Holdings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Holdings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Holdings.
+     */
+    distinct?: HoldingsScalarFieldEnum | HoldingsScalarFieldEnum[]
+  }
+
+  /**
+   * Holdings findFirstOrThrow
+   */
+  export type HoldingsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * Filter, which Holdings to fetch.
+     */
+    where?: HoldingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Holdings to fetch.
+     */
+    orderBy?: HoldingsOrderByWithRelationInput | HoldingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Holdings.
+     */
+    cursor?: HoldingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Holdings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Holdings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Holdings.
+     */
+    distinct?: HoldingsScalarFieldEnum | HoldingsScalarFieldEnum[]
+  }
+
+  /**
+   * Holdings findMany
+   */
+  export type HoldingsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * Filter, which Holdings to fetch.
+     */
+    where?: HoldingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Holdings to fetch.
+     */
+    orderBy?: HoldingsOrderByWithRelationInput | HoldingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Holdings.
+     */
+    cursor?: HoldingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Holdings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Holdings.
+     */
+    skip?: number
+    distinct?: HoldingsScalarFieldEnum | HoldingsScalarFieldEnum[]
+  }
+
+  /**
+   * Holdings create
+   */
+  export type HoldingsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Holdings.
+     */
+    data: XOR<HoldingsCreateInput, HoldingsUncheckedCreateInput>
+  }
+
+  /**
+   * Holdings createMany
+   */
+  export type HoldingsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Holdings.
+     */
+    data: HoldingsCreateManyInput | HoldingsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Holdings createManyAndReturn
+   */
+  export type HoldingsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * The data used to create many Holdings.
+     */
+    data: HoldingsCreateManyInput | HoldingsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Holdings update
+   */
+  export type HoldingsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Holdings.
+     */
+    data: XOR<HoldingsUpdateInput, HoldingsUncheckedUpdateInput>
+    /**
+     * Choose, which Holdings to update.
+     */
+    where: HoldingsWhereUniqueInput
+  }
+
+  /**
+   * Holdings updateMany
+   */
+  export type HoldingsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Holdings.
+     */
+    data: XOR<HoldingsUpdateManyMutationInput, HoldingsUncheckedUpdateManyInput>
+    /**
+     * Filter which Holdings to update
+     */
+    where?: HoldingsWhereInput
+    /**
+     * Limit how many Holdings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Holdings updateManyAndReturn
+   */
+  export type HoldingsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * The data used to update Holdings.
+     */
+    data: XOR<HoldingsUpdateManyMutationInput, HoldingsUncheckedUpdateManyInput>
+    /**
+     * Filter which Holdings to update
+     */
+    where?: HoldingsWhereInput
+    /**
+     * Limit how many Holdings to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Holdings upsert
+   */
+  export type HoldingsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Holdings to update in case it exists.
+     */
+    where: HoldingsWhereUniqueInput
+    /**
+     * In case the Holdings found by the `where` argument doesn't exist, create a new Holdings with this data.
+     */
+    create: XOR<HoldingsCreateInput, HoldingsUncheckedCreateInput>
+    /**
+     * In case the Holdings was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HoldingsUpdateInput, HoldingsUncheckedUpdateInput>
+  }
+
+  /**
+   * Holdings delete
+   */
+  export type HoldingsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+    /**
+     * Filter which Holdings to delete.
+     */
+    where: HoldingsWhereUniqueInput
+  }
+
+  /**
+   * Holdings deleteMany
+   */
+  export type HoldingsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Holdings to delete
+     */
+    where?: HoldingsWhereInput
+    /**
+     * Limit how many Holdings to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Holdings.majorAssetClasses
+   */
+  export type Holdings$majorAssetClassesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    where?: MajorAssetClassWhereInput
+    orderBy?: MajorAssetClassOrderByWithRelationInput | MajorAssetClassOrderByWithRelationInput[]
+    cursor?: MajorAssetClassWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MajorAssetClassScalarFieldEnum | MajorAssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * Holdings without action
+   */
+  export type HoldingsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Holdings
+     */
+    select?: HoldingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Holdings
+     */
+    omit?: HoldingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HoldingsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model MajorAssetClass
+   */
+
+  export type AggregateMajorAssetClass = {
+    _count: MajorAssetClassCountAggregateOutputType | null
+    _avg: MajorAssetClassAvgAggregateOutputType | null
+    _sum: MajorAssetClassSumAggregateOutputType | null
+    _min: MajorAssetClassMinAggregateOutputType | null
+    _max: MajorAssetClassMaxAggregateOutputType | null
+  }
+
+  export type MajorAssetClassAvgAggregateOutputType = {
+    id: number | null
+    holdingsId: number | null
+  }
+
+  export type MajorAssetClassSumAggregateOutputType = {
+    id: number | null
+    holdingsId: number | null
+  }
+
+  export type MajorAssetClassMinAggregateOutputType = {
+    id: number | null
+    holdingsId: number | null
+    majorClass: string | null
+  }
+
+  export type MajorAssetClassMaxAggregateOutputType = {
+    id: number | null
+    holdingsId: number | null
+    majorClass: string | null
+  }
+
+  export type MajorAssetClassCountAggregateOutputType = {
+    id: number
+    holdingsId: number
+    majorClass: number
+    _all: number
+  }
+
+
+  export type MajorAssetClassAvgAggregateInputType = {
+    id?: true
+    holdingsId?: true
+  }
+
+  export type MajorAssetClassSumAggregateInputType = {
+    id?: true
+    holdingsId?: true
+  }
+
+  export type MajorAssetClassMinAggregateInputType = {
+    id?: true
+    holdingsId?: true
+    majorClass?: true
+  }
+
+  export type MajorAssetClassMaxAggregateInputType = {
+    id?: true
+    holdingsId?: true
+    majorClass?: true
+  }
+
+  export type MajorAssetClassCountAggregateInputType = {
+    id?: true
+    holdingsId?: true
+    majorClass?: true
+    _all?: true
+  }
+
+  export type MajorAssetClassAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MajorAssetClass to aggregate.
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MajorAssetClasses to fetch.
+     */
+    orderBy?: MajorAssetClassOrderByWithRelationInput | MajorAssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: MajorAssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MajorAssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MajorAssetClasses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned MajorAssetClasses
+    **/
+    _count?: true | MajorAssetClassCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: MajorAssetClassAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: MajorAssetClassSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: MajorAssetClassMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: MajorAssetClassMaxAggregateInputType
+  }
+
+  export type GetMajorAssetClassAggregateType<T extends MajorAssetClassAggregateArgs> = {
+        [P in keyof T & keyof AggregateMajorAssetClass]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMajorAssetClass[P]>
+      : GetScalarType<T[P], AggregateMajorAssetClass[P]>
+  }
+
+
+
+
+  export type MajorAssetClassGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MajorAssetClassWhereInput
+    orderBy?: MajorAssetClassOrderByWithAggregationInput | MajorAssetClassOrderByWithAggregationInput[]
+    by: MajorAssetClassScalarFieldEnum[] | MajorAssetClassScalarFieldEnum
+    having?: MajorAssetClassScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: MajorAssetClassCountAggregateInputType | true
+    _avg?: MajorAssetClassAvgAggregateInputType
+    _sum?: MajorAssetClassSumAggregateInputType
+    _min?: MajorAssetClassMinAggregateInputType
+    _max?: MajorAssetClassMaxAggregateInputType
+  }
+
+  export type MajorAssetClassGroupByOutputType = {
+    id: number
+    holdingsId: number
+    majorClass: string | null
+    _count: MajorAssetClassCountAggregateOutputType | null
+    _avg: MajorAssetClassAvgAggregateOutputType | null
+    _sum: MajorAssetClassSumAggregateOutputType | null
+    _min: MajorAssetClassMinAggregateOutputType | null
+    _max: MajorAssetClassMaxAggregateOutputType | null
+  }
+
+  type GetMajorAssetClassGroupByPayload<T extends MajorAssetClassGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<MajorAssetClassGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof MajorAssetClassGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], MajorAssetClassGroupByOutputType[P]>
+            : GetScalarType<T[P], MajorAssetClassGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type MajorAssetClassSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    holdingsId?: boolean
+    majorClass?: boolean
+    holdings?: boolean | HoldingsDefaultArgs<ExtArgs>
+    assetClasses?: boolean | MajorAssetClass$assetClassesArgs<ExtArgs>
+    _count?: boolean | MajorAssetClassCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["majorAssetClass"]>
+
+  export type MajorAssetClassSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    holdingsId?: boolean
+    majorClass?: boolean
+    holdings?: boolean | HoldingsDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["majorAssetClass"]>
+
+  export type MajorAssetClassSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    holdingsId?: boolean
+    majorClass?: boolean
+    holdings?: boolean | HoldingsDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["majorAssetClass"]>
+
+  export type MajorAssetClassSelectScalar = {
+    id?: boolean
+    holdingsId?: boolean
+    majorClass?: boolean
+  }
+
+  export type MajorAssetClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "holdingsId" | "majorClass", ExtArgs["result"]["majorAssetClass"]>
+  export type MajorAssetClassInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    holdings?: boolean | HoldingsDefaultArgs<ExtArgs>
+    assetClasses?: boolean | MajorAssetClass$assetClassesArgs<ExtArgs>
+    _count?: boolean | MajorAssetClassCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type MajorAssetClassIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    holdings?: boolean | HoldingsDefaultArgs<ExtArgs>
+  }
+  export type MajorAssetClassIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    holdings?: boolean | HoldingsDefaultArgs<ExtArgs>
+  }
+
+  export type $MajorAssetClassPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MajorAssetClass"
+    objects: {
+      holdings: Prisma.$HoldingsPayload<ExtArgs>
+      assetClasses: Prisma.$AssetClassPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      holdingsId: number
+      majorClass: string | null
+    }, ExtArgs["result"]["majorAssetClass"]>
+    composites: {}
+  }
+
+  type MajorAssetClassGetPayload<S extends boolean | null | undefined | MajorAssetClassDefaultArgs> = $Result.GetResult<Prisma.$MajorAssetClassPayload, S>
+
+  type MajorAssetClassCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MajorAssetClassFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MajorAssetClassCountAggregateInputType | true
+    }
+
+  export interface MajorAssetClassDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MajorAssetClass'], meta: { name: 'MajorAssetClass' } }
+    /**
+     * Find zero or one MajorAssetClass that matches the filter.
+     * @param {MajorAssetClassFindUniqueArgs} args - Arguments to find a MajorAssetClass
+     * @example
+     * // Get one MajorAssetClass
+     * const majorAssetClass = await prisma.majorAssetClass.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MajorAssetClassFindUniqueArgs>(args: SelectSubset<T, MajorAssetClassFindUniqueArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one MajorAssetClass that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MajorAssetClassFindUniqueOrThrowArgs} args - Arguments to find a MajorAssetClass
+     * @example
+     * // Get one MajorAssetClass
+     * const majorAssetClass = await prisma.majorAssetClass.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MajorAssetClassFindUniqueOrThrowArgs>(args: SelectSubset<T, MajorAssetClassFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MajorAssetClass that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassFindFirstArgs} args - Arguments to find a MajorAssetClass
+     * @example
+     * // Get one MajorAssetClass
+     * const majorAssetClass = await prisma.majorAssetClass.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MajorAssetClassFindFirstArgs>(args?: SelectSubset<T, MajorAssetClassFindFirstArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first MajorAssetClass that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassFindFirstOrThrowArgs} args - Arguments to find a MajorAssetClass
+     * @example
+     * // Get one MajorAssetClass
+     * const majorAssetClass = await prisma.majorAssetClass.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MajorAssetClassFindFirstOrThrowArgs>(args?: SelectSubset<T, MajorAssetClassFindFirstOrThrowArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more MajorAssetClasses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all MajorAssetClasses
+     * const majorAssetClasses = await prisma.majorAssetClass.findMany()
+     * 
+     * // Get first 10 MajorAssetClasses
+     * const majorAssetClasses = await prisma.majorAssetClass.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const majorAssetClassWithIdOnly = await prisma.majorAssetClass.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends MajorAssetClassFindManyArgs>(args?: SelectSubset<T, MajorAssetClassFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a MajorAssetClass.
+     * @param {MajorAssetClassCreateArgs} args - Arguments to create a MajorAssetClass.
+     * @example
+     * // Create one MajorAssetClass
+     * const MajorAssetClass = await prisma.majorAssetClass.create({
+     *   data: {
+     *     // ... data to create a MajorAssetClass
+     *   }
+     * })
+     * 
+     */
+    create<T extends MajorAssetClassCreateArgs>(args: SelectSubset<T, MajorAssetClassCreateArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many MajorAssetClasses.
+     * @param {MajorAssetClassCreateManyArgs} args - Arguments to create many MajorAssetClasses.
+     * @example
+     * // Create many MajorAssetClasses
+     * const majorAssetClass = await prisma.majorAssetClass.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends MajorAssetClassCreateManyArgs>(args?: SelectSubset<T, MajorAssetClassCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many MajorAssetClasses and returns the data saved in the database.
+     * @param {MajorAssetClassCreateManyAndReturnArgs} args - Arguments to create many MajorAssetClasses.
+     * @example
+     * // Create many MajorAssetClasses
+     * const majorAssetClass = await prisma.majorAssetClass.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many MajorAssetClasses and only return the `id`
+     * const majorAssetClassWithIdOnly = await prisma.majorAssetClass.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MajorAssetClassCreateManyAndReturnArgs>(args?: SelectSubset<T, MajorAssetClassCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a MajorAssetClass.
+     * @param {MajorAssetClassDeleteArgs} args - Arguments to delete one MajorAssetClass.
+     * @example
+     * // Delete one MajorAssetClass
+     * const MajorAssetClass = await prisma.majorAssetClass.delete({
+     *   where: {
+     *     // ... filter to delete one MajorAssetClass
+     *   }
+     * })
+     * 
+     */
+    delete<T extends MajorAssetClassDeleteArgs>(args: SelectSubset<T, MajorAssetClassDeleteArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one MajorAssetClass.
+     * @param {MajorAssetClassUpdateArgs} args - Arguments to update one MajorAssetClass.
+     * @example
+     * // Update one MajorAssetClass
+     * const majorAssetClass = await prisma.majorAssetClass.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends MajorAssetClassUpdateArgs>(args: SelectSubset<T, MajorAssetClassUpdateArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more MajorAssetClasses.
+     * @param {MajorAssetClassDeleteManyArgs} args - Arguments to filter MajorAssetClasses to delete.
+     * @example
+     * // Delete a few MajorAssetClasses
+     * const { count } = await prisma.majorAssetClass.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends MajorAssetClassDeleteManyArgs>(args?: SelectSubset<T, MajorAssetClassDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MajorAssetClasses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many MajorAssetClasses
+     * const majorAssetClass = await prisma.majorAssetClass.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends MajorAssetClassUpdateManyArgs>(args: SelectSubset<T, MajorAssetClassUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more MajorAssetClasses and returns the data updated in the database.
+     * @param {MajorAssetClassUpdateManyAndReturnArgs} args - Arguments to update many MajorAssetClasses.
+     * @example
+     * // Update many MajorAssetClasses
+     * const majorAssetClass = await prisma.majorAssetClass.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more MajorAssetClasses and only return the `id`
+     * const majorAssetClassWithIdOnly = await prisma.majorAssetClass.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MajorAssetClassUpdateManyAndReturnArgs>(args: SelectSubset<T, MajorAssetClassUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one MajorAssetClass.
+     * @param {MajorAssetClassUpsertArgs} args - Arguments to update or create a MajorAssetClass.
+     * @example
+     * // Update or create a MajorAssetClass
+     * const majorAssetClass = await prisma.majorAssetClass.upsert({
+     *   create: {
+     *     // ... data to create a MajorAssetClass
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the MajorAssetClass we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MajorAssetClassUpsertArgs>(args: SelectSubset<T, MajorAssetClassUpsertArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of MajorAssetClasses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassCountArgs} args - Arguments to filter MajorAssetClasses to count.
+     * @example
+     * // Count the number of MajorAssetClasses
+     * const count = await prisma.majorAssetClass.count({
+     *   where: {
+     *     // ... the filter for the MajorAssetClasses we want to count
+     *   }
+     * })
+    **/
+    count<T extends MajorAssetClassCountArgs>(
+      args?: Subset<T, MajorAssetClassCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], MajorAssetClassCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a MajorAssetClass.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MajorAssetClassAggregateArgs>(args: Subset<T, MajorAssetClassAggregateArgs>): Prisma.PrismaPromise<GetMajorAssetClassAggregateType<T>>
+
+    /**
+     * Group by MajorAssetClass.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MajorAssetClassGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends MajorAssetClassGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: MajorAssetClassGroupByArgs['orderBy'] }
+        : { orderBy?: MajorAssetClassGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, MajorAssetClassGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMajorAssetClassGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the MajorAssetClass model
+   */
+  readonly fields: MajorAssetClassFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for MajorAssetClass.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__MajorAssetClassClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    holdings<T extends HoldingsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, HoldingsDefaultArgs<ExtArgs>>): Prisma__HoldingsClient<$Result.GetResult<Prisma.$HoldingsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    assetClasses<T extends MajorAssetClass$assetClassesArgs<ExtArgs> = {}>(args?: Subset<T, MajorAssetClass$assetClassesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the MajorAssetClass model
+   */
+  interface MajorAssetClassFieldRefs {
+    readonly id: FieldRef<"MajorAssetClass", 'Int'>
+    readonly holdingsId: FieldRef<"MajorAssetClass", 'Int'>
+    readonly majorClass: FieldRef<"MajorAssetClass", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * MajorAssetClass findUnique
+   */
+  export type MajorAssetClassFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which MajorAssetClass to fetch.
+     */
+    where: MajorAssetClassWhereUniqueInput
+  }
+
+  /**
+   * MajorAssetClass findUniqueOrThrow
+   */
+  export type MajorAssetClassFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which MajorAssetClass to fetch.
+     */
+    where: MajorAssetClassWhereUniqueInput
+  }
+
+  /**
+   * MajorAssetClass findFirst
+   */
+  export type MajorAssetClassFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which MajorAssetClass to fetch.
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MajorAssetClasses to fetch.
+     */
+    orderBy?: MajorAssetClassOrderByWithRelationInput | MajorAssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MajorAssetClasses.
+     */
+    cursor?: MajorAssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MajorAssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MajorAssetClasses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MajorAssetClasses.
+     */
+    distinct?: MajorAssetClassScalarFieldEnum | MajorAssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * MajorAssetClass findFirstOrThrow
+   */
+  export type MajorAssetClassFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which MajorAssetClass to fetch.
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MajorAssetClasses to fetch.
+     */
+    orderBy?: MajorAssetClassOrderByWithRelationInput | MajorAssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for MajorAssetClasses.
+     */
+    cursor?: MajorAssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MajorAssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MajorAssetClasses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of MajorAssetClasses.
+     */
+    distinct?: MajorAssetClassScalarFieldEnum | MajorAssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * MajorAssetClass findMany
+   */
+  export type MajorAssetClassFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which MajorAssetClasses to fetch.
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of MajorAssetClasses to fetch.
+     */
+    orderBy?: MajorAssetClassOrderByWithRelationInput | MajorAssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing MajorAssetClasses.
+     */
+    cursor?: MajorAssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` MajorAssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` MajorAssetClasses.
+     */
+    skip?: number
+    distinct?: MajorAssetClassScalarFieldEnum | MajorAssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * MajorAssetClass create
+   */
+  export type MajorAssetClassCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * The data needed to create a MajorAssetClass.
+     */
+    data: XOR<MajorAssetClassCreateInput, MajorAssetClassUncheckedCreateInput>
+  }
+
+  /**
+   * MajorAssetClass createMany
+   */
+  export type MajorAssetClassCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many MajorAssetClasses.
+     */
+    data: MajorAssetClassCreateManyInput | MajorAssetClassCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * MajorAssetClass createManyAndReturn
+   */
+  export type MajorAssetClassCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * The data used to create many MajorAssetClasses.
+     */
+    data: MajorAssetClassCreateManyInput | MajorAssetClassCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * MajorAssetClass update
+   */
+  export type MajorAssetClassUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * The data needed to update a MajorAssetClass.
+     */
+    data: XOR<MajorAssetClassUpdateInput, MajorAssetClassUncheckedUpdateInput>
+    /**
+     * Choose, which MajorAssetClass to update.
+     */
+    where: MajorAssetClassWhereUniqueInput
+  }
+
+  /**
+   * MajorAssetClass updateMany
+   */
+  export type MajorAssetClassUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update MajorAssetClasses.
+     */
+    data: XOR<MajorAssetClassUpdateManyMutationInput, MajorAssetClassUncheckedUpdateManyInput>
+    /**
+     * Filter which MajorAssetClasses to update
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * Limit how many MajorAssetClasses to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * MajorAssetClass updateManyAndReturn
+   */
+  export type MajorAssetClassUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * The data used to update MajorAssetClasses.
+     */
+    data: XOR<MajorAssetClassUpdateManyMutationInput, MajorAssetClassUncheckedUpdateManyInput>
+    /**
+     * Filter which MajorAssetClasses to update
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * Limit how many MajorAssetClasses to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * MajorAssetClass upsert
+   */
+  export type MajorAssetClassUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * The filter to search for the MajorAssetClass to update in case it exists.
+     */
+    where: MajorAssetClassWhereUniqueInput
+    /**
+     * In case the MajorAssetClass found by the `where` argument doesn't exist, create a new MajorAssetClass with this data.
+     */
+    create: XOR<MajorAssetClassCreateInput, MajorAssetClassUncheckedCreateInput>
+    /**
+     * In case the MajorAssetClass was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<MajorAssetClassUpdateInput, MajorAssetClassUncheckedUpdateInput>
+  }
+
+  /**
+   * MajorAssetClass delete
+   */
+  export type MajorAssetClassDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+    /**
+     * Filter which MajorAssetClass to delete.
+     */
+    where: MajorAssetClassWhereUniqueInput
+  }
+
+  /**
+   * MajorAssetClass deleteMany
+   */
+  export type MajorAssetClassDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which MajorAssetClasses to delete
+     */
+    where?: MajorAssetClassWhereInput
+    /**
+     * Limit how many MajorAssetClasses to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * MajorAssetClass.assetClasses
+   */
+  export type MajorAssetClass$assetClassesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    where?: AssetClassWhereInput
+    orderBy?: AssetClassOrderByWithRelationInput | AssetClassOrderByWithRelationInput[]
+    cursor?: AssetClassWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: AssetClassScalarFieldEnum | AssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * MajorAssetClass without action
+   */
+  export type MajorAssetClassDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MajorAssetClass
+     */
+    select?: MajorAssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MajorAssetClass
+     */
+    omit?: MajorAssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MajorAssetClassInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model AssetClass
+   */
+
+  export type AggregateAssetClass = {
+    _count: AssetClassCountAggregateOutputType | null
+    _avg: AssetClassAvgAggregateOutputType | null
+    _sum: AssetClassSumAggregateOutputType | null
+    _min: AssetClassMinAggregateOutputType | null
+    _max: AssetClassMaxAggregateOutputType | null
+  }
+
+  export type AssetClassAvgAggregateOutputType = {
+    id: number | null
+    majorAssetClassId: number | null
+    value: number | null
+  }
+
+  export type AssetClassSumAggregateOutputType = {
+    id: number | null
+    majorAssetClassId: number | null
+    value: number | null
+  }
+
+  export type AssetClassMinAggregateOutputType = {
+    id: number | null
+    majorAssetClassId: number | null
+    minorAssetClass: string | null
+    value: number | null
+  }
+
+  export type AssetClassMaxAggregateOutputType = {
+    id: number | null
+    majorAssetClassId: number | null
+    minorAssetClass: string | null
+    value: number | null
+  }
+
+  export type AssetClassCountAggregateOutputType = {
+    id: number
+    majorAssetClassId: number
+    minorAssetClass: number
+    value: number
+    _all: number
+  }
+
+
+  export type AssetClassAvgAggregateInputType = {
+    id?: true
+    majorAssetClassId?: true
+    value?: true
+  }
+
+  export type AssetClassSumAggregateInputType = {
+    id?: true
+    majorAssetClassId?: true
+    value?: true
+  }
+
+  export type AssetClassMinAggregateInputType = {
+    id?: true
+    majorAssetClassId?: true
+    minorAssetClass?: true
+    value?: true
+  }
+
+  export type AssetClassMaxAggregateInputType = {
+    id?: true
+    majorAssetClassId?: true
+    minorAssetClass?: true
+    value?: true
+  }
+
+  export type AssetClassCountAggregateInputType = {
+    id?: true
+    majorAssetClassId?: true
+    minorAssetClass?: true
+    value?: true
+    _all?: true
+  }
+
+  export type AssetClassAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which AssetClass to aggregate.
+     */
+    where?: AssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of AssetClasses to fetch.
+     */
+    orderBy?: AssetClassOrderByWithRelationInput | AssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: AssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` AssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` AssetClasses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned AssetClasses
+    **/
+    _count?: true | AssetClassCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: AssetClassAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: AssetClassSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: AssetClassMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: AssetClassMaxAggregateInputType
+  }
+
+  export type GetAssetClassAggregateType<T extends AssetClassAggregateArgs> = {
+        [P in keyof T & keyof AggregateAssetClass]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAssetClass[P]>
+      : GetScalarType<T[P], AggregateAssetClass[P]>
+  }
+
+
+
+
+  export type AssetClassGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AssetClassWhereInput
+    orderBy?: AssetClassOrderByWithAggregationInput | AssetClassOrderByWithAggregationInput[]
+    by: AssetClassScalarFieldEnum[] | AssetClassScalarFieldEnum
+    having?: AssetClassScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: AssetClassCountAggregateInputType | true
+    _avg?: AssetClassAvgAggregateInputType
+    _sum?: AssetClassSumAggregateInputType
+    _min?: AssetClassMinAggregateInputType
+    _max?: AssetClassMaxAggregateInputType
+  }
+
+  export type AssetClassGroupByOutputType = {
+    id: number
+    majorAssetClassId: number
+    minorAssetClass: string | null
+    value: number | null
+    _count: AssetClassCountAggregateOutputType | null
+    _avg: AssetClassAvgAggregateOutputType | null
+    _sum: AssetClassSumAggregateOutputType | null
+    _min: AssetClassMinAggregateOutputType | null
+    _max: AssetClassMaxAggregateOutputType | null
+  }
+
+  type GetAssetClassGroupByPayload<T extends AssetClassGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<AssetClassGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof AssetClassGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], AssetClassGroupByOutputType[P]>
+            : GetScalarType<T[P], AssetClassGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type AssetClassSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    majorAssetClassId?: boolean
+    minorAssetClass?: boolean
+    value?: boolean
+    majorAssetClass?: boolean | MajorAssetClassDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["assetClass"]>
+
+  export type AssetClassSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    majorAssetClassId?: boolean
+    minorAssetClass?: boolean
+    value?: boolean
+    majorAssetClass?: boolean | MajorAssetClassDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["assetClass"]>
+
+  export type AssetClassSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    majorAssetClassId?: boolean
+    minorAssetClass?: boolean
+    value?: boolean
+    majorAssetClass?: boolean | MajorAssetClassDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["assetClass"]>
+
+  export type AssetClassSelectScalar = {
+    id?: boolean
+    majorAssetClassId?: boolean
+    minorAssetClass?: boolean
+    value?: boolean
+  }
+
+  export type AssetClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "majorAssetClassId" | "minorAssetClass" | "value", ExtArgs["result"]["assetClass"]>
+  export type AssetClassInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    majorAssetClass?: boolean | MajorAssetClassDefaultArgs<ExtArgs>
+  }
+  export type AssetClassIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    majorAssetClass?: boolean | MajorAssetClassDefaultArgs<ExtArgs>
+  }
+  export type AssetClassIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    majorAssetClass?: boolean | MajorAssetClassDefaultArgs<ExtArgs>
+  }
+
+  export type $AssetClassPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "AssetClass"
+    objects: {
+      majorAssetClass: Prisma.$MajorAssetClassPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      majorAssetClassId: number
+      minorAssetClass: string | null
+      value: number | null
+    }, ExtArgs["result"]["assetClass"]>
+    composites: {}
+  }
+
+  type AssetClassGetPayload<S extends boolean | null | undefined | AssetClassDefaultArgs> = $Result.GetResult<Prisma.$AssetClassPayload, S>
+
+  type AssetClassCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<AssetClassFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: AssetClassCountAggregateInputType | true
+    }
+
+  export interface AssetClassDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['AssetClass'], meta: { name: 'AssetClass' } }
+    /**
+     * Find zero or one AssetClass that matches the filter.
+     * @param {AssetClassFindUniqueArgs} args - Arguments to find a AssetClass
+     * @example
+     * // Get one AssetClass
+     * const assetClass = await prisma.assetClass.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends AssetClassFindUniqueArgs>(args: SelectSubset<T, AssetClassFindUniqueArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one AssetClass that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {AssetClassFindUniqueOrThrowArgs} args - Arguments to find a AssetClass
+     * @example
+     * // Get one AssetClass
+     * const assetClass = await prisma.assetClass.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends AssetClassFindUniqueOrThrowArgs>(args: SelectSubset<T, AssetClassFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first AssetClass that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassFindFirstArgs} args - Arguments to find a AssetClass
+     * @example
+     * // Get one AssetClass
+     * const assetClass = await prisma.assetClass.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends AssetClassFindFirstArgs>(args?: SelectSubset<T, AssetClassFindFirstArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first AssetClass that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassFindFirstOrThrowArgs} args - Arguments to find a AssetClass
+     * @example
+     * // Get one AssetClass
+     * const assetClass = await prisma.assetClass.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends AssetClassFindFirstOrThrowArgs>(args?: SelectSubset<T, AssetClassFindFirstOrThrowArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more AssetClasses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all AssetClasses
+     * const assetClasses = await prisma.assetClass.findMany()
+     * 
+     * // Get first 10 AssetClasses
+     * const assetClasses = await prisma.assetClass.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const assetClassWithIdOnly = await prisma.assetClass.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends AssetClassFindManyArgs>(args?: SelectSubset<T, AssetClassFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a AssetClass.
+     * @param {AssetClassCreateArgs} args - Arguments to create a AssetClass.
+     * @example
+     * // Create one AssetClass
+     * const AssetClass = await prisma.assetClass.create({
+     *   data: {
+     *     // ... data to create a AssetClass
+     *   }
+     * })
+     * 
+     */
+    create<T extends AssetClassCreateArgs>(args: SelectSubset<T, AssetClassCreateArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many AssetClasses.
+     * @param {AssetClassCreateManyArgs} args - Arguments to create many AssetClasses.
+     * @example
+     * // Create many AssetClasses
+     * const assetClass = await prisma.assetClass.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends AssetClassCreateManyArgs>(args?: SelectSubset<T, AssetClassCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many AssetClasses and returns the data saved in the database.
+     * @param {AssetClassCreateManyAndReturnArgs} args - Arguments to create many AssetClasses.
+     * @example
+     * // Create many AssetClasses
+     * const assetClass = await prisma.assetClass.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many AssetClasses and only return the `id`
+     * const assetClassWithIdOnly = await prisma.assetClass.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends AssetClassCreateManyAndReturnArgs>(args?: SelectSubset<T, AssetClassCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a AssetClass.
+     * @param {AssetClassDeleteArgs} args - Arguments to delete one AssetClass.
+     * @example
+     * // Delete one AssetClass
+     * const AssetClass = await prisma.assetClass.delete({
+     *   where: {
+     *     // ... filter to delete one AssetClass
+     *   }
+     * })
+     * 
+     */
+    delete<T extends AssetClassDeleteArgs>(args: SelectSubset<T, AssetClassDeleteArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one AssetClass.
+     * @param {AssetClassUpdateArgs} args - Arguments to update one AssetClass.
+     * @example
+     * // Update one AssetClass
+     * const assetClass = await prisma.assetClass.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends AssetClassUpdateArgs>(args: SelectSubset<T, AssetClassUpdateArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more AssetClasses.
+     * @param {AssetClassDeleteManyArgs} args - Arguments to filter AssetClasses to delete.
+     * @example
+     * // Delete a few AssetClasses
+     * const { count } = await prisma.assetClass.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends AssetClassDeleteManyArgs>(args?: SelectSubset<T, AssetClassDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more AssetClasses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many AssetClasses
+     * const assetClass = await prisma.assetClass.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends AssetClassUpdateManyArgs>(args: SelectSubset<T, AssetClassUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more AssetClasses and returns the data updated in the database.
+     * @param {AssetClassUpdateManyAndReturnArgs} args - Arguments to update many AssetClasses.
+     * @example
+     * // Update many AssetClasses
+     * const assetClass = await prisma.assetClass.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more AssetClasses and only return the `id`
+     * const assetClassWithIdOnly = await prisma.assetClass.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends AssetClassUpdateManyAndReturnArgs>(args: SelectSubset<T, AssetClassUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one AssetClass.
+     * @param {AssetClassUpsertArgs} args - Arguments to update or create a AssetClass.
+     * @example
+     * // Update or create a AssetClass
+     * const assetClass = await prisma.assetClass.upsert({
+     *   create: {
+     *     // ... data to create a AssetClass
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the AssetClass we want to update
+     *   }
+     * })
+     */
+    upsert<T extends AssetClassUpsertArgs>(args: SelectSubset<T, AssetClassUpsertArgs<ExtArgs>>): Prisma__AssetClassClient<$Result.GetResult<Prisma.$AssetClassPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of AssetClasses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassCountArgs} args - Arguments to filter AssetClasses to count.
+     * @example
+     * // Count the number of AssetClasses
+     * const count = await prisma.assetClass.count({
+     *   where: {
+     *     // ... the filter for the AssetClasses we want to count
+     *   }
+     * })
+    **/
+    count<T extends AssetClassCountArgs>(
+      args?: Subset<T, AssetClassCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], AssetClassCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a AssetClass.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends AssetClassAggregateArgs>(args: Subset<T, AssetClassAggregateArgs>): Prisma.PrismaPromise<GetAssetClassAggregateType<T>>
+
+    /**
+     * Group by AssetClass.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AssetClassGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends AssetClassGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: AssetClassGroupByArgs['orderBy'] }
+        : { orderBy?: AssetClassGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, AssetClassGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAssetClassGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the AssetClass model
+   */
+  readonly fields: AssetClassFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for AssetClass.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__AssetClassClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    majorAssetClass<T extends MajorAssetClassDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MajorAssetClassDefaultArgs<ExtArgs>>): Prisma__MajorAssetClassClient<$Result.GetResult<Prisma.$MajorAssetClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the AssetClass model
+   */
+  interface AssetClassFieldRefs {
+    readonly id: FieldRef<"AssetClass", 'Int'>
+    readonly majorAssetClassId: FieldRef<"AssetClass", 'Int'>
+    readonly minorAssetClass: FieldRef<"AssetClass", 'String'>
+    readonly value: FieldRef<"AssetClass", 'Float'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * AssetClass findUnique
+   */
+  export type AssetClassFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which AssetClass to fetch.
+     */
+    where: AssetClassWhereUniqueInput
+  }
+
+  /**
+   * AssetClass findUniqueOrThrow
+   */
+  export type AssetClassFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which AssetClass to fetch.
+     */
+    where: AssetClassWhereUniqueInput
+  }
+
+  /**
+   * AssetClass findFirst
+   */
+  export type AssetClassFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which AssetClass to fetch.
+     */
+    where?: AssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of AssetClasses to fetch.
+     */
+    orderBy?: AssetClassOrderByWithRelationInput | AssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for AssetClasses.
+     */
+    cursor?: AssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` AssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` AssetClasses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of AssetClasses.
+     */
+    distinct?: AssetClassScalarFieldEnum | AssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * AssetClass findFirstOrThrow
+   */
+  export type AssetClassFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which AssetClass to fetch.
+     */
+    where?: AssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of AssetClasses to fetch.
+     */
+    orderBy?: AssetClassOrderByWithRelationInput | AssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for AssetClasses.
+     */
+    cursor?: AssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` AssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` AssetClasses.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of AssetClasses.
+     */
+    distinct?: AssetClassScalarFieldEnum | AssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * AssetClass findMany
+   */
+  export type AssetClassFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * Filter, which AssetClasses to fetch.
+     */
+    where?: AssetClassWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of AssetClasses to fetch.
+     */
+    orderBy?: AssetClassOrderByWithRelationInput | AssetClassOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing AssetClasses.
+     */
+    cursor?: AssetClassWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` AssetClasses from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` AssetClasses.
+     */
+    skip?: number
+    distinct?: AssetClassScalarFieldEnum | AssetClassScalarFieldEnum[]
+  }
+
+  /**
+   * AssetClass create
+   */
+  export type AssetClassCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * The data needed to create a AssetClass.
+     */
+    data: XOR<AssetClassCreateInput, AssetClassUncheckedCreateInput>
+  }
+
+  /**
+   * AssetClass createMany
+   */
+  export type AssetClassCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many AssetClasses.
+     */
+    data: AssetClassCreateManyInput | AssetClassCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * AssetClass createManyAndReturn
+   */
+  export type AssetClassCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * The data used to create many AssetClasses.
+     */
+    data: AssetClassCreateManyInput | AssetClassCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * AssetClass update
+   */
+  export type AssetClassUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * The data needed to update a AssetClass.
+     */
+    data: XOR<AssetClassUpdateInput, AssetClassUncheckedUpdateInput>
+    /**
+     * Choose, which AssetClass to update.
+     */
+    where: AssetClassWhereUniqueInput
+  }
+
+  /**
+   * AssetClass updateMany
+   */
+  export type AssetClassUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update AssetClasses.
+     */
+    data: XOR<AssetClassUpdateManyMutationInput, AssetClassUncheckedUpdateManyInput>
+    /**
+     * Filter which AssetClasses to update
+     */
+    where?: AssetClassWhereInput
+    /**
+     * Limit how many AssetClasses to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * AssetClass updateManyAndReturn
+   */
+  export type AssetClassUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * The data used to update AssetClasses.
+     */
+    data: XOR<AssetClassUpdateManyMutationInput, AssetClassUncheckedUpdateManyInput>
+    /**
+     * Filter which AssetClasses to update
+     */
+    where?: AssetClassWhereInput
+    /**
+     * Limit how many AssetClasses to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * AssetClass upsert
+   */
+  export type AssetClassUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * The filter to search for the AssetClass to update in case it exists.
+     */
+    where: AssetClassWhereUniqueInput
+    /**
+     * In case the AssetClass found by the `where` argument doesn't exist, create a new AssetClass with this data.
+     */
+    create: XOR<AssetClassCreateInput, AssetClassUncheckedCreateInput>
+    /**
+     * In case the AssetClass was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<AssetClassUpdateInput, AssetClassUncheckedUpdateInput>
+  }
+
+  /**
+   * AssetClass delete
+   */
+  export type AssetClassDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+    /**
+     * Filter which AssetClass to delete.
+     */
+    where: AssetClassWhereUniqueInput
+  }
+
+  /**
+   * AssetClass deleteMany
+   */
+  export type AssetClassDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which AssetClasses to delete
+     */
+    where?: AssetClassWhereInput
+    /**
+     * Limit how many AssetClasses to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * AssetClass without action
+   */
+  export type AssetClassDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AssetClass
+     */
+    select?: AssetClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the AssetClass
+     */
+    omit?: AssetClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AssetClassInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -6711,12 +12089,103 @@ export namespace Prisma {
   export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
 
 
+  export const AssetScalarFieldEnum: {
+    assetId: 'assetId',
+    assetDescription: 'assetDescription',
+    assetInfo: 'assetInfo',
+    assetInfoType: 'assetInfoType',
+    assetMask: 'assetMask',
+    assetName: 'assetName',
+    assetOwnerName: 'assetOwnerName',
+    balanceAsOf: 'balanceAsOf',
+    balanceCostBasis: 'balanceCostBasis',
+    balanceCostFrom: 'balanceCostFrom',
+    balanceCurrent: 'balanceCurrent',
+    balanceFrom: 'balanceFrom',
+    balancePrice: 'balancePrice',
+    balancePriceFrom: 'balancePriceFrom',
+    balanceQuantityCurrent: 'balanceQuantityCurrent',
+    beneficiaryComposition: 'beneficiaryComposition',
+    cognitoId: 'cognitoId',
+    creationDate: 'creationDate',
+    currencyCode: 'currencyCode',
+    deactivateBy: 'deactivateBy',
+    descriptionEstatePlan: 'descriptionEstatePlan',
+    hasInvestment: 'hasInvestment',
+    includeInNetWorth: 'includeInNetWorth',
+    institutionId: 'institutionId',
+    institutionName: 'institutionName',
+    integration: 'integration',
+    integrationAccountId: 'integrationAccountId',
+    isActive: 'isActive',
+    isAsset: 'isAsset',
+    isFavorite: 'isFavorite',
+    isLinkedVendor: 'isLinkedVendor',
+    lastUpdate: 'lastUpdate',
+    lastUpdateAttempt: 'lastUpdateAttempt',
+    logoName: 'logoName',
+    modificationDate: 'modificationDate',
+    nextUpdate: 'nextUpdate',
+    nickname: 'nickname',
+    note: 'note',
+    noteDate: 'noteDate',
+    ownership: 'ownership',
+    primaryAssetCategory: 'primaryAssetCategory',
+    status: 'status',
+    statusCode: 'statusCode',
+    userInstitutionId: 'userInstitutionId',
+    vendorAccountType: 'vendorAccountType',
+    vendorContainer: 'vendorContainer',
+    vendorResponse: 'vendorResponse',
+    vendorResponseType: 'vendorResponseType',
+    wealthAssetType: 'wealthAssetType',
+    wid: 'wid'
+  };
+
+  export type AssetScalarFieldEnum = (typeof AssetScalarFieldEnum)[keyof typeof AssetScalarFieldEnum]
+
+
+  export const HoldingsScalarFieldEnum: {
+    id: 'id',
+    assetId: 'assetId'
+  };
+
+  export type HoldingsScalarFieldEnum = (typeof HoldingsScalarFieldEnum)[keyof typeof HoldingsScalarFieldEnum]
+
+
+  export const MajorAssetClassScalarFieldEnum: {
+    id: 'id',
+    holdingsId: 'holdingsId',
+    majorClass: 'majorClass'
+  };
+
+  export type MajorAssetClassScalarFieldEnum = (typeof MajorAssetClassScalarFieldEnum)[keyof typeof MajorAssetClassScalarFieldEnum]
+
+
+  export const AssetClassScalarFieldEnum: {
+    id: 'id',
+    majorAssetClassId: 'majorAssetClassId',
+    minorAssetClass: 'minorAssetClass',
+    value: 'value'
+  };
+
+  export type AssetClassScalarFieldEnum = (typeof AssetClassScalarFieldEnum)[keyof typeof AssetClassScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+  export const NullableJsonNullValueInput: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull
+  };
+
+  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
   export const QueryMode: {
@@ -6733,6 +12202,15 @@ export namespace Prisma {
   };
 
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+  export const JsonNullValueFilter: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull,
+    AnyNull: typeof AnyNull
+  };
+
+  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
   /**
@@ -6783,6 +12261,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Json'
+   */
+  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+  /**
+   * Reference to a field of type 'QueryMode'
+   */
+  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -6793,6 +12285,13 @@ export namespace Prisma {
    * Reference to a field of type 'Float[]'
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
   /**
    * Deep Input Types
@@ -7110,6 +12609,435 @@ export namespace Prisma {
     identifier?: StringWithAggregatesFilter<"VerificationToken"> | string
     token?: StringWithAggregatesFilter<"VerificationToken"> | string
     expires?: DateTimeWithAggregatesFilter<"VerificationToken"> | Date | string
+  }
+
+  export type AssetWhereInput = {
+    AND?: AssetWhereInput | AssetWhereInput[]
+    OR?: AssetWhereInput[]
+    NOT?: AssetWhereInput | AssetWhereInput[]
+    assetId?: StringFilter<"Asset"> | string
+    assetDescription?: StringNullableFilter<"Asset"> | string | null
+    assetInfo?: JsonNullableFilter<"Asset">
+    assetInfoType?: StringNullableFilter<"Asset"> | string | null
+    assetMask?: StringNullableFilter<"Asset"> | string | null
+    assetName?: StringNullableFilter<"Asset"> | string | null
+    assetOwnerName?: StringNullableFilter<"Asset"> | string | null
+    balanceAsOf?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    balanceCostBasis?: FloatNullableFilter<"Asset"> | number | null
+    balanceCostFrom?: StringNullableFilter<"Asset"> | string | null
+    balanceCurrent?: FloatNullableFilter<"Asset"> | number | null
+    balanceFrom?: StringNullableFilter<"Asset"> | string | null
+    balancePrice?: FloatNullableFilter<"Asset"> | number | null
+    balancePriceFrom?: StringNullableFilter<"Asset"> | string | null
+    balanceQuantityCurrent?: FloatNullableFilter<"Asset"> | number | null
+    beneficiaryComposition?: JsonNullableFilter<"Asset">
+    cognitoId?: StringNullableFilter<"Asset"> | string | null
+    creationDate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    currencyCode?: StringNullableFilter<"Asset"> | string | null
+    deactivateBy?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    descriptionEstatePlan?: StringNullableFilter<"Asset"> | string | null
+    hasInvestment?: BoolNullableFilter<"Asset"> | boolean | null
+    includeInNetWorth?: BoolNullableFilter<"Asset"> | boolean | null
+    institutionId?: IntNullableFilter<"Asset"> | number | null
+    institutionName?: StringNullableFilter<"Asset"> | string | null
+    integration?: JsonNullableFilter<"Asset">
+    integrationAccountId?: StringNullableFilter<"Asset"> | string | null
+    isActive?: BoolNullableFilter<"Asset"> | boolean | null
+    isAsset?: BoolNullableFilter<"Asset"> | boolean | null
+    isFavorite?: BoolNullableFilter<"Asset"> | boolean | null
+    isLinkedVendor?: BoolNullableFilter<"Asset"> | boolean | null
+    lastUpdate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    lastUpdateAttempt?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    logoName?: StringNullableFilter<"Asset"> | string | null
+    modificationDate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    nextUpdate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    nickname?: StringNullableFilter<"Asset"> | string | null
+    note?: StringNullableFilter<"Asset"> | string | null
+    noteDate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    ownership?: StringNullableFilter<"Asset"> | string | null
+    primaryAssetCategory?: StringNullableFilter<"Asset"> | string | null
+    status?: StringNullableFilter<"Asset"> | string | null
+    statusCode?: StringNullableFilter<"Asset"> | string | null
+    userInstitutionId?: StringNullableFilter<"Asset"> | string | null
+    vendorAccountType?: StringNullableFilter<"Asset"> | string | null
+    vendorContainer?: StringNullableFilter<"Asset"> | string | null
+    vendorResponse?: JsonNullableFilter<"Asset">
+    vendorResponseType?: StringNullableFilter<"Asset"> | string | null
+    wealthAssetType?: StringNullableFilter<"Asset"> | string | null
+    wid?: StringNullableFilter<"Asset"> | string | null
+    holdings?: XOR<HoldingsNullableScalarRelationFilter, HoldingsWhereInput> | null
+  }
+
+  export type AssetOrderByWithRelationInput = {
+    assetId?: SortOrder
+    assetDescription?: SortOrderInput | SortOrder
+    assetInfo?: SortOrderInput | SortOrder
+    assetInfoType?: SortOrderInput | SortOrder
+    assetMask?: SortOrderInput | SortOrder
+    assetName?: SortOrderInput | SortOrder
+    assetOwnerName?: SortOrderInput | SortOrder
+    balanceAsOf?: SortOrderInput | SortOrder
+    balanceCostBasis?: SortOrderInput | SortOrder
+    balanceCostFrom?: SortOrderInput | SortOrder
+    balanceCurrent?: SortOrderInput | SortOrder
+    balanceFrom?: SortOrderInput | SortOrder
+    balancePrice?: SortOrderInput | SortOrder
+    balancePriceFrom?: SortOrderInput | SortOrder
+    balanceQuantityCurrent?: SortOrderInput | SortOrder
+    beneficiaryComposition?: SortOrderInput | SortOrder
+    cognitoId?: SortOrderInput | SortOrder
+    creationDate?: SortOrderInput | SortOrder
+    currencyCode?: SortOrderInput | SortOrder
+    deactivateBy?: SortOrderInput | SortOrder
+    descriptionEstatePlan?: SortOrderInput | SortOrder
+    hasInvestment?: SortOrderInput | SortOrder
+    includeInNetWorth?: SortOrderInput | SortOrder
+    institutionId?: SortOrderInput | SortOrder
+    institutionName?: SortOrderInput | SortOrder
+    integration?: SortOrderInput | SortOrder
+    integrationAccountId?: SortOrderInput | SortOrder
+    isActive?: SortOrderInput | SortOrder
+    isAsset?: SortOrderInput | SortOrder
+    isFavorite?: SortOrderInput | SortOrder
+    isLinkedVendor?: SortOrderInput | SortOrder
+    lastUpdate?: SortOrderInput | SortOrder
+    lastUpdateAttempt?: SortOrderInput | SortOrder
+    logoName?: SortOrderInput | SortOrder
+    modificationDate?: SortOrderInput | SortOrder
+    nextUpdate?: SortOrderInput | SortOrder
+    nickname?: SortOrderInput | SortOrder
+    note?: SortOrderInput | SortOrder
+    noteDate?: SortOrderInput | SortOrder
+    ownership?: SortOrderInput | SortOrder
+    primaryAssetCategory?: SortOrderInput | SortOrder
+    status?: SortOrderInput | SortOrder
+    statusCode?: SortOrderInput | SortOrder
+    userInstitutionId?: SortOrderInput | SortOrder
+    vendorAccountType?: SortOrderInput | SortOrder
+    vendorContainer?: SortOrderInput | SortOrder
+    vendorResponse?: SortOrderInput | SortOrder
+    vendorResponseType?: SortOrderInput | SortOrder
+    wealthAssetType?: SortOrderInput | SortOrder
+    wid?: SortOrderInput | SortOrder
+    holdings?: HoldingsOrderByWithRelationInput
+  }
+
+  export type AssetWhereUniqueInput = Prisma.AtLeast<{
+    assetId?: string
+    AND?: AssetWhereInput | AssetWhereInput[]
+    OR?: AssetWhereInput[]
+    NOT?: AssetWhereInput | AssetWhereInput[]
+    assetDescription?: StringNullableFilter<"Asset"> | string | null
+    assetInfo?: JsonNullableFilter<"Asset">
+    assetInfoType?: StringNullableFilter<"Asset"> | string | null
+    assetMask?: StringNullableFilter<"Asset"> | string | null
+    assetName?: StringNullableFilter<"Asset"> | string | null
+    assetOwnerName?: StringNullableFilter<"Asset"> | string | null
+    balanceAsOf?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    balanceCostBasis?: FloatNullableFilter<"Asset"> | number | null
+    balanceCostFrom?: StringNullableFilter<"Asset"> | string | null
+    balanceCurrent?: FloatNullableFilter<"Asset"> | number | null
+    balanceFrom?: StringNullableFilter<"Asset"> | string | null
+    balancePrice?: FloatNullableFilter<"Asset"> | number | null
+    balancePriceFrom?: StringNullableFilter<"Asset"> | string | null
+    balanceQuantityCurrent?: FloatNullableFilter<"Asset"> | number | null
+    beneficiaryComposition?: JsonNullableFilter<"Asset">
+    cognitoId?: StringNullableFilter<"Asset"> | string | null
+    creationDate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    currencyCode?: StringNullableFilter<"Asset"> | string | null
+    deactivateBy?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    descriptionEstatePlan?: StringNullableFilter<"Asset"> | string | null
+    hasInvestment?: BoolNullableFilter<"Asset"> | boolean | null
+    includeInNetWorth?: BoolNullableFilter<"Asset"> | boolean | null
+    institutionId?: IntNullableFilter<"Asset"> | number | null
+    institutionName?: StringNullableFilter<"Asset"> | string | null
+    integration?: JsonNullableFilter<"Asset">
+    integrationAccountId?: StringNullableFilter<"Asset"> | string | null
+    isActive?: BoolNullableFilter<"Asset"> | boolean | null
+    isAsset?: BoolNullableFilter<"Asset"> | boolean | null
+    isFavorite?: BoolNullableFilter<"Asset"> | boolean | null
+    isLinkedVendor?: BoolNullableFilter<"Asset"> | boolean | null
+    lastUpdate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    lastUpdateAttempt?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    logoName?: StringNullableFilter<"Asset"> | string | null
+    modificationDate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    nextUpdate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    nickname?: StringNullableFilter<"Asset"> | string | null
+    note?: StringNullableFilter<"Asset"> | string | null
+    noteDate?: DateTimeNullableFilter<"Asset"> | Date | string | null
+    ownership?: StringNullableFilter<"Asset"> | string | null
+    primaryAssetCategory?: StringNullableFilter<"Asset"> | string | null
+    status?: StringNullableFilter<"Asset"> | string | null
+    statusCode?: StringNullableFilter<"Asset"> | string | null
+    userInstitutionId?: StringNullableFilter<"Asset"> | string | null
+    vendorAccountType?: StringNullableFilter<"Asset"> | string | null
+    vendorContainer?: StringNullableFilter<"Asset"> | string | null
+    vendorResponse?: JsonNullableFilter<"Asset">
+    vendorResponseType?: StringNullableFilter<"Asset"> | string | null
+    wealthAssetType?: StringNullableFilter<"Asset"> | string | null
+    wid?: StringNullableFilter<"Asset"> | string | null
+    holdings?: XOR<HoldingsNullableScalarRelationFilter, HoldingsWhereInput> | null
+  }, "assetId">
+
+  export type AssetOrderByWithAggregationInput = {
+    assetId?: SortOrder
+    assetDescription?: SortOrderInput | SortOrder
+    assetInfo?: SortOrderInput | SortOrder
+    assetInfoType?: SortOrderInput | SortOrder
+    assetMask?: SortOrderInput | SortOrder
+    assetName?: SortOrderInput | SortOrder
+    assetOwnerName?: SortOrderInput | SortOrder
+    balanceAsOf?: SortOrderInput | SortOrder
+    balanceCostBasis?: SortOrderInput | SortOrder
+    balanceCostFrom?: SortOrderInput | SortOrder
+    balanceCurrent?: SortOrderInput | SortOrder
+    balanceFrom?: SortOrderInput | SortOrder
+    balancePrice?: SortOrderInput | SortOrder
+    balancePriceFrom?: SortOrderInput | SortOrder
+    balanceQuantityCurrent?: SortOrderInput | SortOrder
+    beneficiaryComposition?: SortOrderInput | SortOrder
+    cognitoId?: SortOrderInput | SortOrder
+    creationDate?: SortOrderInput | SortOrder
+    currencyCode?: SortOrderInput | SortOrder
+    deactivateBy?: SortOrderInput | SortOrder
+    descriptionEstatePlan?: SortOrderInput | SortOrder
+    hasInvestment?: SortOrderInput | SortOrder
+    includeInNetWorth?: SortOrderInput | SortOrder
+    institutionId?: SortOrderInput | SortOrder
+    institutionName?: SortOrderInput | SortOrder
+    integration?: SortOrderInput | SortOrder
+    integrationAccountId?: SortOrderInput | SortOrder
+    isActive?: SortOrderInput | SortOrder
+    isAsset?: SortOrderInput | SortOrder
+    isFavorite?: SortOrderInput | SortOrder
+    isLinkedVendor?: SortOrderInput | SortOrder
+    lastUpdate?: SortOrderInput | SortOrder
+    lastUpdateAttempt?: SortOrderInput | SortOrder
+    logoName?: SortOrderInput | SortOrder
+    modificationDate?: SortOrderInput | SortOrder
+    nextUpdate?: SortOrderInput | SortOrder
+    nickname?: SortOrderInput | SortOrder
+    note?: SortOrderInput | SortOrder
+    noteDate?: SortOrderInput | SortOrder
+    ownership?: SortOrderInput | SortOrder
+    primaryAssetCategory?: SortOrderInput | SortOrder
+    status?: SortOrderInput | SortOrder
+    statusCode?: SortOrderInput | SortOrder
+    userInstitutionId?: SortOrderInput | SortOrder
+    vendorAccountType?: SortOrderInput | SortOrder
+    vendorContainer?: SortOrderInput | SortOrder
+    vendorResponse?: SortOrderInput | SortOrder
+    vendorResponseType?: SortOrderInput | SortOrder
+    wealthAssetType?: SortOrderInput | SortOrder
+    wid?: SortOrderInput | SortOrder
+    _count?: AssetCountOrderByAggregateInput
+    _avg?: AssetAvgOrderByAggregateInput
+    _max?: AssetMaxOrderByAggregateInput
+    _min?: AssetMinOrderByAggregateInput
+    _sum?: AssetSumOrderByAggregateInput
+  }
+
+  export type AssetScalarWhereWithAggregatesInput = {
+    AND?: AssetScalarWhereWithAggregatesInput | AssetScalarWhereWithAggregatesInput[]
+    OR?: AssetScalarWhereWithAggregatesInput[]
+    NOT?: AssetScalarWhereWithAggregatesInput | AssetScalarWhereWithAggregatesInput[]
+    assetId?: StringWithAggregatesFilter<"Asset"> | string
+    assetDescription?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    assetInfo?: JsonNullableWithAggregatesFilter<"Asset">
+    assetInfoType?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    assetMask?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    assetName?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    assetOwnerName?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    balanceAsOf?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    balanceCostBasis?: FloatNullableWithAggregatesFilter<"Asset"> | number | null
+    balanceCostFrom?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    balanceCurrent?: FloatNullableWithAggregatesFilter<"Asset"> | number | null
+    balanceFrom?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    balancePrice?: FloatNullableWithAggregatesFilter<"Asset"> | number | null
+    balancePriceFrom?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    balanceQuantityCurrent?: FloatNullableWithAggregatesFilter<"Asset"> | number | null
+    beneficiaryComposition?: JsonNullableWithAggregatesFilter<"Asset">
+    cognitoId?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    creationDate?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    currencyCode?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    deactivateBy?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    descriptionEstatePlan?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    hasInvestment?: BoolNullableWithAggregatesFilter<"Asset"> | boolean | null
+    includeInNetWorth?: BoolNullableWithAggregatesFilter<"Asset"> | boolean | null
+    institutionId?: IntNullableWithAggregatesFilter<"Asset"> | number | null
+    institutionName?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    integration?: JsonNullableWithAggregatesFilter<"Asset">
+    integrationAccountId?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    isActive?: BoolNullableWithAggregatesFilter<"Asset"> | boolean | null
+    isAsset?: BoolNullableWithAggregatesFilter<"Asset"> | boolean | null
+    isFavorite?: BoolNullableWithAggregatesFilter<"Asset"> | boolean | null
+    isLinkedVendor?: BoolNullableWithAggregatesFilter<"Asset"> | boolean | null
+    lastUpdate?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    lastUpdateAttempt?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    logoName?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    modificationDate?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    nextUpdate?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    nickname?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    note?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    noteDate?: DateTimeNullableWithAggregatesFilter<"Asset"> | Date | string | null
+    ownership?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    primaryAssetCategory?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    status?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    statusCode?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    userInstitutionId?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    vendorAccountType?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    vendorContainer?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    vendorResponse?: JsonNullableWithAggregatesFilter<"Asset">
+    vendorResponseType?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    wealthAssetType?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+    wid?: StringNullableWithAggregatesFilter<"Asset"> | string | null
+  }
+
+  export type HoldingsWhereInput = {
+    AND?: HoldingsWhereInput | HoldingsWhereInput[]
+    OR?: HoldingsWhereInput[]
+    NOT?: HoldingsWhereInput | HoldingsWhereInput[]
+    id?: IntFilter<"Holdings"> | number
+    assetId?: StringFilter<"Holdings"> | string
+    asset?: XOR<AssetScalarRelationFilter, AssetWhereInput>
+    majorAssetClasses?: MajorAssetClassListRelationFilter
+  }
+
+  export type HoldingsOrderByWithRelationInput = {
+    id?: SortOrder
+    assetId?: SortOrder
+    asset?: AssetOrderByWithRelationInput
+    majorAssetClasses?: MajorAssetClassOrderByRelationAggregateInput
+  }
+
+  export type HoldingsWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    assetId?: string
+    AND?: HoldingsWhereInput | HoldingsWhereInput[]
+    OR?: HoldingsWhereInput[]
+    NOT?: HoldingsWhereInput | HoldingsWhereInput[]
+    asset?: XOR<AssetScalarRelationFilter, AssetWhereInput>
+    majorAssetClasses?: MajorAssetClassListRelationFilter
+  }, "id" | "assetId">
+
+  export type HoldingsOrderByWithAggregationInput = {
+    id?: SortOrder
+    assetId?: SortOrder
+    _count?: HoldingsCountOrderByAggregateInput
+    _avg?: HoldingsAvgOrderByAggregateInput
+    _max?: HoldingsMaxOrderByAggregateInput
+    _min?: HoldingsMinOrderByAggregateInput
+    _sum?: HoldingsSumOrderByAggregateInput
+  }
+
+  export type HoldingsScalarWhereWithAggregatesInput = {
+    AND?: HoldingsScalarWhereWithAggregatesInput | HoldingsScalarWhereWithAggregatesInput[]
+    OR?: HoldingsScalarWhereWithAggregatesInput[]
+    NOT?: HoldingsScalarWhereWithAggregatesInput | HoldingsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Holdings"> | number
+    assetId?: StringWithAggregatesFilter<"Holdings"> | string
+  }
+
+  export type MajorAssetClassWhereInput = {
+    AND?: MajorAssetClassWhereInput | MajorAssetClassWhereInput[]
+    OR?: MajorAssetClassWhereInput[]
+    NOT?: MajorAssetClassWhereInput | MajorAssetClassWhereInput[]
+    id?: IntFilter<"MajorAssetClass"> | number
+    holdingsId?: IntFilter<"MajorAssetClass"> | number
+    majorClass?: StringNullableFilter<"MajorAssetClass"> | string | null
+    holdings?: XOR<HoldingsScalarRelationFilter, HoldingsWhereInput>
+    assetClasses?: AssetClassListRelationFilter
+  }
+
+  export type MajorAssetClassOrderByWithRelationInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+    majorClass?: SortOrderInput | SortOrder
+    holdings?: HoldingsOrderByWithRelationInput
+    assetClasses?: AssetClassOrderByRelationAggregateInput
+  }
+
+  export type MajorAssetClassWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: MajorAssetClassWhereInput | MajorAssetClassWhereInput[]
+    OR?: MajorAssetClassWhereInput[]
+    NOT?: MajorAssetClassWhereInput | MajorAssetClassWhereInput[]
+    holdingsId?: IntFilter<"MajorAssetClass"> | number
+    majorClass?: StringNullableFilter<"MajorAssetClass"> | string | null
+    holdings?: XOR<HoldingsScalarRelationFilter, HoldingsWhereInput>
+    assetClasses?: AssetClassListRelationFilter
+  }, "id">
+
+  export type MajorAssetClassOrderByWithAggregationInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+    majorClass?: SortOrderInput | SortOrder
+    _count?: MajorAssetClassCountOrderByAggregateInput
+    _avg?: MajorAssetClassAvgOrderByAggregateInput
+    _max?: MajorAssetClassMaxOrderByAggregateInput
+    _min?: MajorAssetClassMinOrderByAggregateInput
+    _sum?: MajorAssetClassSumOrderByAggregateInput
+  }
+
+  export type MajorAssetClassScalarWhereWithAggregatesInput = {
+    AND?: MajorAssetClassScalarWhereWithAggregatesInput | MajorAssetClassScalarWhereWithAggregatesInput[]
+    OR?: MajorAssetClassScalarWhereWithAggregatesInput[]
+    NOT?: MajorAssetClassScalarWhereWithAggregatesInput | MajorAssetClassScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MajorAssetClass"> | number
+    holdingsId?: IntWithAggregatesFilter<"MajorAssetClass"> | number
+    majorClass?: StringNullableWithAggregatesFilter<"MajorAssetClass"> | string | null
+  }
+
+  export type AssetClassWhereInput = {
+    AND?: AssetClassWhereInput | AssetClassWhereInput[]
+    OR?: AssetClassWhereInput[]
+    NOT?: AssetClassWhereInput | AssetClassWhereInput[]
+    id?: IntFilter<"AssetClass"> | number
+    majorAssetClassId?: IntFilter<"AssetClass"> | number
+    minorAssetClass?: StringNullableFilter<"AssetClass"> | string | null
+    value?: FloatNullableFilter<"AssetClass"> | number | null
+    majorAssetClass?: XOR<MajorAssetClassScalarRelationFilter, MajorAssetClassWhereInput>
+  }
+
+  export type AssetClassOrderByWithRelationInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    minorAssetClass?: SortOrderInput | SortOrder
+    value?: SortOrderInput | SortOrder
+    majorAssetClass?: MajorAssetClassOrderByWithRelationInput
+  }
+
+  export type AssetClassWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: AssetClassWhereInput | AssetClassWhereInput[]
+    OR?: AssetClassWhereInput[]
+    NOT?: AssetClassWhereInput | AssetClassWhereInput[]
+    majorAssetClassId?: IntFilter<"AssetClass"> | number
+    minorAssetClass?: StringNullableFilter<"AssetClass"> | string | null
+    value?: FloatNullableFilter<"AssetClass"> | number | null
+    majorAssetClass?: XOR<MajorAssetClassScalarRelationFilter, MajorAssetClassWhereInput>
+  }, "id">
+
+  export type AssetClassOrderByWithAggregationInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    minorAssetClass?: SortOrderInput | SortOrder
+    value?: SortOrderInput | SortOrder
+    _count?: AssetClassCountOrderByAggregateInput
+    _avg?: AssetClassAvgOrderByAggregateInput
+    _max?: AssetClassMaxOrderByAggregateInput
+    _min?: AssetClassMinOrderByAggregateInput
+    _sum?: AssetClassSumOrderByAggregateInput
+  }
+
+  export type AssetClassScalarWhereWithAggregatesInput = {
+    AND?: AssetClassScalarWhereWithAggregatesInput | AssetClassScalarWhereWithAggregatesInput[]
+    OR?: AssetClassScalarWhereWithAggregatesInput[]
+    NOT?: AssetClassScalarWhereWithAggregatesInput | AssetClassScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"AssetClass"> | number
+    majorAssetClassId?: IntWithAggregatesFilter<"AssetClass"> | number
+    minorAssetClass?: StringNullableWithAggregatesFilter<"AssetClass"> | string | null
+    value?: FloatNullableWithAggregatesFilter<"AssetClass"> | number | null
   }
 
   export type DefaultUserCreateInput = {
@@ -7442,6 +13370,504 @@ export namespace Prisma {
     identifier?: StringFieldUpdateOperationsInput | string
     token?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type AssetCreateInput = {
+    assetId: string
+    assetDescription?: string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: string | null
+    assetMask?: string | null
+    assetName?: string | null
+    assetOwnerName?: string | null
+    balanceAsOf?: Date | string | null
+    balanceCostBasis?: number | null
+    balanceCostFrom?: string | null
+    balanceCurrent?: number | null
+    balanceFrom?: string | null
+    balancePrice?: number | null
+    balancePriceFrom?: string | null
+    balanceQuantityCurrent?: number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: string | null
+    creationDate?: Date | string | null
+    currencyCode?: string | null
+    deactivateBy?: Date | string | null
+    descriptionEstatePlan?: string | null
+    hasInvestment?: boolean | null
+    includeInNetWorth?: boolean | null
+    institutionId?: number | null
+    institutionName?: string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: string | null
+    isActive?: boolean | null
+    isAsset?: boolean | null
+    isFavorite?: boolean | null
+    isLinkedVendor?: boolean | null
+    lastUpdate?: Date | string | null
+    lastUpdateAttempt?: Date | string | null
+    logoName?: string | null
+    modificationDate?: Date | string | null
+    nextUpdate?: Date | string | null
+    nickname?: string | null
+    note?: string | null
+    noteDate?: Date | string | null
+    ownership?: string | null
+    primaryAssetCategory?: string | null
+    status?: string | null
+    statusCode?: string | null
+    userInstitutionId?: string | null
+    vendorAccountType?: string | null
+    vendorContainer?: string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: string | null
+    wealthAssetType?: string | null
+    wid?: string | null
+    holdings?: HoldingsCreateNestedOneWithoutAssetInput
+  }
+
+  export type AssetUncheckedCreateInput = {
+    assetId: string
+    assetDescription?: string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: string | null
+    assetMask?: string | null
+    assetName?: string | null
+    assetOwnerName?: string | null
+    balanceAsOf?: Date | string | null
+    balanceCostBasis?: number | null
+    balanceCostFrom?: string | null
+    balanceCurrent?: number | null
+    balanceFrom?: string | null
+    balancePrice?: number | null
+    balancePriceFrom?: string | null
+    balanceQuantityCurrent?: number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: string | null
+    creationDate?: Date | string | null
+    currencyCode?: string | null
+    deactivateBy?: Date | string | null
+    descriptionEstatePlan?: string | null
+    hasInvestment?: boolean | null
+    includeInNetWorth?: boolean | null
+    institutionId?: number | null
+    institutionName?: string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: string | null
+    isActive?: boolean | null
+    isAsset?: boolean | null
+    isFavorite?: boolean | null
+    isLinkedVendor?: boolean | null
+    lastUpdate?: Date | string | null
+    lastUpdateAttempt?: Date | string | null
+    logoName?: string | null
+    modificationDate?: Date | string | null
+    nextUpdate?: Date | string | null
+    nickname?: string | null
+    note?: string | null
+    noteDate?: Date | string | null
+    ownership?: string | null
+    primaryAssetCategory?: string | null
+    status?: string | null
+    statusCode?: string | null
+    userInstitutionId?: string | null
+    vendorAccountType?: string | null
+    vendorContainer?: string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: string | null
+    wealthAssetType?: string | null
+    wid?: string | null
+    holdings?: HoldingsUncheckedCreateNestedOneWithoutAssetInput
+  }
+
+  export type AssetUpdateInput = {
+    assetId?: StringFieldUpdateOperationsInput | string
+    assetDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: NullableStringFieldUpdateOperationsInput | string | null
+    assetMask?: NullableStringFieldUpdateOperationsInput | string | null
+    assetName?: NullableStringFieldUpdateOperationsInput | string | null
+    assetOwnerName?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceAsOf?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    balanceCostBasis?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceCostFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balancePrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    balancePriceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceQuantityCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: NullableStringFieldUpdateOperationsInput | string | null
+    creationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    currencyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    deactivateBy?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    descriptionEstatePlan?: NullableStringFieldUpdateOperationsInput | string | null
+    hasInvestment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    includeInNetWorth?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    institutionId?: NullableIntFieldUpdateOperationsInput | number | null
+    institutionName?: NullableStringFieldUpdateOperationsInput | string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    isActive?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isAsset?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isFavorite?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isLinkedVendor?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    lastUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastUpdateAttempt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    logoName?: NullableStringFieldUpdateOperationsInput | string | null
+    modificationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nextUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nickname?: NullableStringFieldUpdateOperationsInput | string | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    noteDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ownership?: NullableStringFieldUpdateOperationsInput | string | null
+    primaryAssetCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    statusCode?: NullableStringFieldUpdateOperationsInput | string | null
+    userInstitutionId?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorAccountType?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorContainer?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: NullableStringFieldUpdateOperationsInput | string | null
+    wealthAssetType?: NullableStringFieldUpdateOperationsInput | string | null
+    wid?: NullableStringFieldUpdateOperationsInput | string | null
+    holdings?: HoldingsUpdateOneWithoutAssetNestedInput
+  }
+
+  export type AssetUncheckedUpdateInput = {
+    assetId?: StringFieldUpdateOperationsInput | string
+    assetDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: NullableStringFieldUpdateOperationsInput | string | null
+    assetMask?: NullableStringFieldUpdateOperationsInput | string | null
+    assetName?: NullableStringFieldUpdateOperationsInput | string | null
+    assetOwnerName?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceAsOf?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    balanceCostBasis?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceCostFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balancePrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    balancePriceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceQuantityCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: NullableStringFieldUpdateOperationsInput | string | null
+    creationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    currencyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    deactivateBy?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    descriptionEstatePlan?: NullableStringFieldUpdateOperationsInput | string | null
+    hasInvestment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    includeInNetWorth?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    institutionId?: NullableIntFieldUpdateOperationsInput | number | null
+    institutionName?: NullableStringFieldUpdateOperationsInput | string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    isActive?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isAsset?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isFavorite?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isLinkedVendor?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    lastUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastUpdateAttempt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    logoName?: NullableStringFieldUpdateOperationsInput | string | null
+    modificationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nextUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nickname?: NullableStringFieldUpdateOperationsInput | string | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    noteDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ownership?: NullableStringFieldUpdateOperationsInput | string | null
+    primaryAssetCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    statusCode?: NullableStringFieldUpdateOperationsInput | string | null
+    userInstitutionId?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorAccountType?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorContainer?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: NullableStringFieldUpdateOperationsInput | string | null
+    wealthAssetType?: NullableStringFieldUpdateOperationsInput | string | null
+    wid?: NullableStringFieldUpdateOperationsInput | string | null
+    holdings?: HoldingsUncheckedUpdateOneWithoutAssetNestedInput
+  }
+
+  export type AssetCreateManyInput = {
+    assetId: string
+    assetDescription?: string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: string | null
+    assetMask?: string | null
+    assetName?: string | null
+    assetOwnerName?: string | null
+    balanceAsOf?: Date | string | null
+    balanceCostBasis?: number | null
+    balanceCostFrom?: string | null
+    balanceCurrent?: number | null
+    balanceFrom?: string | null
+    balancePrice?: number | null
+    balancePriceFrom?: string | null
+    balanceQuantityCurrent?: number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: string | null
+    creationDate?: Date | string | null
+    currencyCode?: string | null
+    deactivateBy?: Date | string | null
+    descriptionEstatePlan?: string | null
+    hasInvestment?: boolean | null
+    includeInNetWorth?: boolean | null
+    institutionId?: number | null
+    institutionName?: string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: string | null
+    isActive?: boolean | null
+    isAsset?: boolean | null
+    isFavorite?: boolean | null
+    isLinkedVendor?: boolean | null
+    lastUpdate?: Date | string | null
+    lastUpdateAttempt?: Date | string | null
+    logoName?: string | null
+    modificationDate?: Date | string | null
+    nextUpdate?: Date | string | null
+    nickname?: string | null
+    note?: string | null
+    noteDate?: Date | string | null
+    ownership?: string | null
+    primaryAssetCategory?: string | null
+    status?: string | null
+    statusCode?: string | null
+    userInstitutionId?: string | null
+    vendorAccountType?: string | null
+    vendorContainer?: string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: string | null
+    wealthAssetType?: string | null
+    wid?: string | null
+  }
+
+  export type AssetUpdateManyMutationInput = {
+    assetId?: StringFieldUpdateOperationsInput | string
+    assetDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: NullableStringFieldUpdateOperationsInput | string | null
+    assetMask?: NullableStringFieldUpdateOperationsInput | string | null
+    assetName?: NullableStringFieldUpdateOperationsInput | string | null
+    assetOwnerName?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceAsOf?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    balanceCostBasis?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceCostFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balancePrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    balancePriceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceQuantityCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: NullableStringFieldUpdateOperationsInput | string | null
+    creationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    currencyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    deactivateBy?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    descriptionEstatePlan?: NullableStringFieldUpdateOperationsInput | string | null
+    hasInvestment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    includeInNetWorth?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    institutionId?: NullableIntFieldUpdateOperationsInput | number | null
+    institutionName?: NullableStringFieldUpdateOperationsInput | string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    isActive?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isAsset?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isFavorite?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isLinkedVendor?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    lastUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastUpdateAttempt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    logoName?: NullableStringFieldUpdateOperationsInput | string | null
+    modificationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nextUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nickname?: NullableStringFieldUpdateOperationsInput | string | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    noteDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ownership?: NullableStringFieldUpdateOperationsInput | string | null
+    primaryAssetCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    statusCode?: NullableStringFieldUpdateOperationsInput | string | null
+    userInstitutionId?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorAccountType?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorContainer?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: NullableStringFieldUpdateOperationsInput | string | null
+    wealthAssetType?: NullableStringFieldUpdateOperationsInput | string | null
+    wid?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type AssetUncheckedUpdateManyInput = {
+    assetId?: StringFieldUpdateOperationsInput | string
+    assetDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: NullableStringFieldUpdateOperationsInput | string | null
+    assetMask?: NullableStringFieldUpdateOperationsInput | string | null
+    assetName?: NullableStringFieldUpdateOperationsInput | string | null
+    assetOwnerName?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceAsOf?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    balanceCostBasis?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceCostFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balancePrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    balancePriceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceQuantityCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: NullableStringFieldUpdateOperationsInput | string | null
+    creationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    currencyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    deactivateBy?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    descriptionEstatePlan?: NullableStringFieldUpdateOperationsInput | string | null
+    hasInvestment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    includeInNetWorth?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    institutionId?: NullableIntFieldUpdateOperationsInput | number | null
+    institutionName?: NullableStringFieldUpdateOperationsInput | string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    isActive?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isAsset?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isFavorite?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isLinkedVendor?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    lastUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastUpdateAttempt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    logoName?: NullableStringFieldUpdateOperationsInput | string | null
+    modificationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nextUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nickname?: NullableStringFieldUpdateOperationsInput | string | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    noteDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ownership?: NullableStringFieldUpdateOperationsInput | string | null
+    primaryAssetCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    statusCode?: NullableStringFieldUpdateOperationsInput | string | null
+    userInstitutionId?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorAccountType?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorContainer?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: NullableStringFieldUpdateOperationsInput | string | null
+    wealthAssetType?: NullableStringFieldUpdateOperationsInput | string | null
+    wid?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type HoldingsCreateInput = {
+    asset: AssetCreateNestedOneWithoutHoldingsInput
+    majorAssetClasses?: MajorAssetClassCreateNestedManyWithoutHoldingsInput
+  }
+
+  export type HoldingsUncheckedCreateInput = {
+    id?: number
+    assetId: string
+    majorAssetClasses?: MajorAssetClassUncheckedCreateNestedManyWithoutHoldingsInput
+  }
+
+  export type HoldingsUpdateInput = {
+    asset?: AssetUpdateOneRequiredWithoutHoldingsNestedInput
+    majorAssetClasses?: MajorAssetClassUpdateManyWithoutHoldingsNestedInput
+  }
+
+  export type HoldingsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    assetId?: StringFieldUpdateOperationsInput | string
+    majorAssetClasses?: MajorAssetClassUncheckedUpdateManyWithoutHoldingsNestedInput
+  }
+
+  export type HoldingsCreateManyInput = {
+    id?: number
+    assetId: string
+  }
+
+  export type HoldingsUpdateManyMutationInput = {
+
+  }
+
+  export type HoldingsUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    assetId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type MajorAssetClassCreateInput = {
+    majorClass?: string | null
+    holdings: HoldingsCreateNestedOneWithoutMajorAssetClassesInput
+    assetClasses?: AssetClassCreateNestedManyWithoutMajorAssetClassInput
+  }
+
+  export type MajorAssetClassUncheckedCreateInput = {
+    id?: number
+    holdingsId: number
+    majorClass?: string | null
+    assetClasses?: AssetClassUncheckedCreateNestedManyWithoutMajorAssetClassInput
+  }
+
+  export type MajorAssetClassUpdateInput = {
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+    holdings?: HoldingsUpdateOneRequiredWithoutMajorAssetClassesNestedInput
+    assetClasses?: AssetClassUpdateManyWithoutMajorAssetClassNestedInput
+  }
+
+  export type MajorAssetClassUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    holdingsId?: IntFieldUpdateOperationsInput | number
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+    assetClasses?: AssetClassUncheckedUpdateManyWithoutMajorAssetClassNestedInput
+  }
+
+  export type MajorAssetClassCreateManyInput = {
+    id?: number
+    holdingsId: number
+    majorClass?: string | null
+  }
+
+  export type MajorAssetClassUpdateManyMutationInput = {
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type MajorAssetClassUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    holdingsId?: IntFieldUpdateOperationsInput | number
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type AssetClassCreateInput = {
+    minorAssetClass?: string | null
+    value?: number | null
+    majorAssetClass: MajorAssetClassCreateNestedOneWithoutAssetClassesInput
+  }
+
+  export type AssetClassUncheckedCreateInput = {
+    id?: number
+    majorAssetClassId: number
+    minorAssetClass?: string | null
+    value?: number | null
+  }
+
+  export type AssetClassUpdateInput = {
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
+    majorAssetClass?: MajorAssetClassUpdateOneRequiredWithoutAssetClassesNestedInput
+  }
+
+  export type AssetClassUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    majorAssetClassId?: IntFieldUpdateOperationsInput | number
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type AssetClassCreateManyInput = {
+    id?: number
+    majorAssetClassId: number
+    minorAssetClass?: string | null
+    value?: number | null
+  }
+
+  export type AssetClassUpdateManyMutationInput = {
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type AssetClassUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    majorAssetClassId?: IntFieldUpdateOperationsInput | number
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -7810,6 +14236,386 @@ export namespace Prisma {
     token?: SortOrder
     expires?: SortOrder
   }
+  export type JsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type HoldingsNullableScalarRelationFilter = {
+    is?: HoldingsWhereInput | null
+    isNot?: HoldingsWhereInput | null
+  }
+
+  export type AssetCountOrderByAggregateInput = {
+    assetId?: SortOrder
+    assetDescription?: SortOrder
+    assetInfo?: SortOrder
+    assetInfoType?: SortOrder
+    assetMask?: SortOrder
+    assetName?: SortOrder
+    assetOwnerName?: SortOrder
+    balanceAsOf?: SortOrder
+    balanceCostBasis?: SortOrder
+    balanceCostFrom?: SortOrder
+    balanceCurrent?: SortOrder
+    balanceFrom?: SortOrder
+    balancePrice?: SortOrder
+    balancePriceFrom?: SortOrder
+    balanceQuantityCurrent?: SortOrder
+    beneficiaryComposition?: SortOrder
+    cognitoId?: SortOrder
+    creationDate?: SortOrder
+    currencyCode?: SortOrder
+    deactivateBy?: SortOrder
+    descriptionEstatePlan?: SortOrder
+    hasInvestment?: SortOrder
+    includeInNetWorth?: SortOrder
+    institutionId?: SortOrder
+    institutionName?: SortOrder
+    integration?: SortOrder
+    integrationAccountId?: SortOrder
+    isActive?: SortOrder
+    isAsset?: SortOrder
+    isFavorite?: SortOrder
+    isLinkedVendor?: SortOrder
+    lastUpdate?: SortOrder
+    lastUpdateAttempt?: SortOrder
+    logoName?: SortOrder
+    modificationDate?: SortOrder
+    nextUpdate?: SortOrder
+    nickname?: SortOrder
+    note?: SortOrder
+    noteDate?: SortOrder
+    ownership?: SortOrder
+    primaryAssetCategory?: SortOrder
+    status?: SortOrder
+    statusCode?: SortOrder
+    userInstitutionId?: SortOrder
+    vendorAccountType?: SortOrder
+    vendorContainer?: SortOrder
+    vendorResponse?: SortOrder
+    vendorResponseType?: SortOrder
+    wealthAssetType?: SortOrder
+    wid?: SortOrder
+  }
+
+  export type AssetAvgOrderByAggregateInput = {
+    balanceCostBasis?: SortOrder
+    balanceCurrent?: SortOrder
+    balancePrice?: SortOrder
+    balanceQuantityCurrent?: SortOrder
+    institutionId?: SortOrder
+  }
+
+  export type AssetMaxOrderByAggregateInput = {
+    assetId?: SortOrder
+    assetDescription?: SortOrder
+    assetInfoType?: SortOrder
+    assetMask?: SortOrder
+    assetName?: SortOrder
+    assetOwnerName?: SortOrder
+    balanceAsOf?: SortOrder
+    balanceCostBasis?: SortOrder
+    balanceCostFrom?: SortOrder
+    balanceCurrent?: SortOrder
+    balanceFrom?: SortOrder
+    balancePrice?: SortOrder
+    balancePriceFrom?: SortOrder
+    balanceQuantityCurrent?: SortOrder
+    cognitoId?: SortOrder
+    creationDate?: SortOrder
+    currencyCode?: SortOrder
+    deactivateBy?: SortOrder
+    descriptionEstatePlan?: SortOrder
+    hasInvestment?: SortOrder
+    includeInNetWorth?: SortOrder
+    institutionId?: SortOrder
+    institutionName?: SortOrder
+    integrationAccountId?: SortOrder
+    isActive?: SortOrder
+    isAsset?: SortOrder
+    isFavorite?: SortOrder
+    isLinkedVendor?: SortOrder
+    lastUpdate?: SortOrder
+    lastUpdateAttempt?: SortOrder
+    logoName?: SortOrder
+    modificationDate?: SortOrder
+    nextUpdate?: SortOrder
+    nickname?: SortOrder
+    note?: SortOrder
+    noteDate?: SortOrder
+    ownership?: SortOrder
+    primaryAssetCategory?: SortOrder
+    status?: SortOrder
+    statusCode?: SortOrder
+    userInstitutionId?: SortOrder
+    vendorAccountType?: SortOrder
+    vendorContainer?: SortOrder
+    vendorResponseType?: SortOrder
+    wealthAssetType?: SortOrder
+    wid?: SortOrder
+  }
+
+  export type AssetMinOrderByAggregateInput = {
+    assetId?: SortOrder
+    assetDescription?: SortOrder
+    assetInfoType?: SortOrder
+    assetMask?: SortOrder
+    assetName?: SortOrder
+    assetOwnerName?: SortOrder
+    balanceAsOf?: SortOrder
+    balanceCostBasis?: SortOrder
+    balanceCostFrom?: SortOrder
+    balanceCurrent?: SortOrder
+    balanceFrom?: SortOrder
+    balancePrice?: SortOrder
+    balancePriceFrom?: SortOrder
+    balanceQuantityCurrent?: SortOrder
+    cognitoId?: SortOrder
+    creationDate?: SortOrder
+    currencyCode?: SortOrder
+    deactivateBy?: SortOrder
+    descriptionEstatePlan?: SortOrder
+    hasInvestment?: SortOrder
+    includeInNetWorth?: SortOrder
+    institutionId?: SortOrder
+    institutionName?: SortOrder
+    integrationAccountId?: SortOrder
+    isActive?: SortOrder
+    isAsset?: SortOrder
+    isFavorite?: SortOrder
+    isLinkedVendor?: SortOrder
+    lastUpdate?: SortOrder
+    lastUpdateAttempt?: SortOrder
+    logoName?: SortOrder
+    modificationDate?: SortOrder
+    nextUpdate?: SortOrder
+    nickname?: SortOrder
+    note?: SortOrder
+    noteDate?: SortOrder
+    ownership?: SortOrder
+    primaryAssetCategory?: SortOrder
+    status?: SortOrder
+    statusCode?: SortOrder
+    userInstitutionId?: SortOrder
+    vendorAccountType?: SortOrder
+    vendorContainer?: SortOrder
+    vendorResponseType?: SortOrder
+    wealthAssetType?: SortOrder
+    wid?: SortOrder
+  }
+
+  export type AssetSumOrderByAggregateInput = {
+    balanceCostBasis?: SortOrder
+    balanceCurrent?: SortOrder
+    balancePrice?: SortOrder
+    balanceQuantityCurrent?: SortOrder
+    institutionId?: SortOrder
+  }
+  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedJsonNullableFilter<$PrismaModel>
+    _max?: NestedJsonNullableFilter<$PrismaModel>
+  }
+
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type AssetScalarRelationFilter = {
+    is?: AssetWhereInput
+    isNot?: AssetWhereInput
+  }
+
+  export type MajorAssetClassListRelationFilter = {
+    every?: MajorAssetClassWhereInput
+    some?: MajorAssetClassWhereInput
+    none?: MajorAssetClassWhereInput
+  }
+
+  export type MajorAssetClassOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type HoldingsCountOrderByAggregateInput = {
+    id?: SortOrder
+    assetId?: SortOrder
+  }
+
+  export type HoldingsAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type HoldingsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    assetId?: SortOrder
+  }
+
+  export type HoldingsMinOrderByAggregateInput = {
+    id?: SortOrder
+    assetId?: SortOrder
+  }
+
+  export type HoldingsSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type HoldingsScalarRelationFilter = {
+    is?: HoldingsWhereInput
+    isNot?: HoldingsWhereInput
+  }
+
+  export type AssetClassListRelationFilter = {
+    every?: AssetClassWhereInput
+    some?: AssetClassWhereInput
+    none?: AssetClassWhereInput
+  }
+
+  export type AssetClassOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type MajorAssetClassCountOrderByAggregateInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+    majorClass?: SortOrder
+  }
+
+  export type MajorAssetClassAvgOrderByAggregateInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+  }
+
+  export type MajorAssetClassMaxOrderByAggregateInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+    majorClass?: SortOrder
+  }
+
+  export type MajorAssetClassMinOrderByAggregateInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+    majorClass?: SortOrder
+  }
+
+  export type MajorAssetClassSumOrderByAggregateInput = {
+    id?: SortOrder
+    holdingsId?: SortOrder
+  }
+
+  export type MajorAssetClassScalarRelationFilter = {
+    is?: MajorAssetClassWhereInput
+    isNot?: MajorAssetClassWhereInput
+  }
+
+  export type AssetClassCountOrderByAggregateInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    minorAssetClass?: SortOrder
+    value?: SortOrder
+  }
+
+  export type AssetClassAvgOrderByAggregateInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    value?: SortOrder
+  }
+
+  export type AssetClassMaxOrderByAggregateInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    minorAssetClass?: SortOrder
+    value?: SortOrder
+  }
+
+  export type AssetClassMinOrderByAggregateInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    minorAssetClass?: SortOrder
+    value?: SortOrder
+  }
+
+  export type AssetClassSumOrderByAggregateInput = {
+    id?: SortOrder
+    majorAssetClassId?: SortOrder
+    value?: SortOrder
+  }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
@@ -7953,6 +14759,176 @@ export namespace Prisma {
     upsert?: UserUpsertWithoutSessionsInput
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSessionsInput, UserUpdateWithoutSessionsInput>, UserUncheckedUpdateWithoutSessionsInput>
+  }
+
+  export type HoldingsCreateNestedOneWithoutAssetInput = {
+    create?: XOR<HoldingsCreateWithoutAssetInput, HoldingsUncheckedCreateWithoutAssetInput>
+    connectOrCreate?: HoldingsCreateOrConnectWithoutAssetInput
+    connect?: HoldingsWhereUniqueInput
+  }
+
+  export type HoldingsUncheckedCreateNestedOneWithoutAssetInput = {
+    create?: XOR<HoldingsCreateWithoutAssetInput, HoldingsUncheckedCreateWithoutAssetInput>
+    connectOrCreate?: HoldingsCreateOrConnectWithoutAssetInput
+    connect?: HoldingsWhereUniqueInput
+  }
+
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
+  export type HoldingsUpdateOneWithoutAssetNestedInput = {
+    create?: XOR<HoldingsCreateWithoutAssetInput, HoldingsUncheckedCreateWithoutAssetInput>
+    connectOrCreate?: HoldingsCreateOrConnectWithoutAssetInput
+    upsert?: HoldingsUpsertWithoutAssetInput
+    disconnect?: HoldingsWhereInput | boolean
+    delete?: HoldingsWhereInput | boolean
+    connect?: HoldingsWhereUniqueInput
+    update?: XOR<XOR<HoldingsUpdateToOneWithWhereWithoutAssetInput, HoldingsUpdateWithoutAssetInput>, HoldingsUncheckedUpdateWithoutAssetInput>
+  }
+
+  export type HoldingsUncheckedUpdateOneWithoutAssetNestedInput = {
+    create?: XOR<HoldingsCreateWithoutAssetInput, HoldingsUncheckedCreateWithoutAssetInput>
+    connectOrCreate?: HoldingsCreateOrConnectWithoutAssetInput
+    upsert?: HoldingsUpsertWithoutAssetInput
+    disconnect?: HoldingsWhereInput | boolean
+    delete?: HoldingsWhereInput | boolean
+    connect?: HoldingsWhereUniqueInput
+    update?: XOR<XOR<HoldingsUpdateToOneWithWhereWithoutAssetInput, HoldingsUpdateWithoutAssetInput>, HoldingsUncheckedUpdateWithoutAssetInput>
+  }
+
+  export type AssetCreateNestedOneWithoutHoldingsInput = {
+    create?: XOR<AssetCreateWithoutHoldingsInput, AssetUncheckedCreateWithoutHoldingsInput>
+    connectOrCreate?: AssetCreateOrConnectWithoutHoldingsInput
+    connect?: AssetWhereUniqueInput
+  }
+
+  export type MajorAssetClassCreateNestedManyWithoutHoldingsInput = {
+    create?: XOR<MajorAssetClassCreateWithoutHoldingsInput, MajorAssetClassUncheckedCreateWithoutHoldingsInput> | MajorAssetClassCreateWithoutHoldingsInput[] | MajorAssetClassUncheckedCreateWithoutHoldingsInput[]
+    connectOrCreate?: MajorAssetClassCreateOrConnectWithoutHoldingsInput | MajorAssetClassCreateOrConnectWithoutHoldingsInput[]
+    createMany?: MajorAssetClassCreateManyHoldingsInputEnvelope
+    connect?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+  }
+
+  export type MajorAssetClassUncheckedCreateNestedManyWithoutHoldingsInput = {
+    create?: XOR<MajorAssetClassCreateWithoutHoldingsInput, MajorAssetClassUncheckedCreateWithoutHoldingsInput> | MajorAssetClassCreateWithoutHoldingsInput[] | MajorAssetClassUncheckedCreateWithoutHoldingsInput[]
+    connectOrCreate?: MajorAssetClassCreateOrConnectWithoutHoldingsInput | MajorAssetClassCreateOrConnectWithoutHoldingsInput[]
+    createMany?: MajorAssetClassCreateManyHoldingsInputEnvelope
+    connect?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+  }
+
+  export type AssetUpdateOneRequiredWithoutHoldingsNestedInput = {
+    create?: XOR<AssetCreateWithoutHoldingsInput, AssetUncheckedCreateWithoutHoldingsInput>
+    connectOrCreate?: AssetCreateOrConnectWithoutHoldingsInput
+    upsert?: AssetUpsertWithoutHoldingsInput
+    connect?: AssetWhereUniqueInput
+    update?: XOR<XOR<AssetUpdateToOneWithWhereWithoutHoldingsInput, AssetUpdateWithoutHoldingsInput>, AssetUncheckedUpdateWithoutHoldingsInput>
+  }
+
+  export type MajorAssetClassUpdateManyWithoutHoldingsNestedInput = {
+    create?: XOR<MajorAssetClassCreateWithoutHoldingsInput, MajorAssetClassUncheckedCreateWithoutHoldingsInput> | MajorAssetClassCreateWithoutHoldingsInput[] | MajorAssetClassUncheckedCreateWithoutHoldingsInput[]
+    connectOrCreate?: MajorAssetClassCreateOrConnectWithoutHoldingsInput | MajorAssetClassCreateOrConnectWithoutHoldingsInput[]
+    upsert?: MajorAssetClassUpsertWithWhereUniqueWithoutHoldingsInput | MajorAssetClassUpsertWithWhereUniqueWithoutHoldingsInput[]
+    createMany?: MajorAssetClassCreateManyHoldingsInputEnvelope
+    set?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    disconnect?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    delete?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    connect?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    update?: MajorAssetClassUpdateWithWhereUniqueWithoutHoldingsInput | MajorAssetClassUpdateWithWhereUniqueWithoutHoldingsInput[]
+    updateMany?: MajorAssetClassUpdateManyWithWhereWithoutHoldingsInput | MajorAssetClassUpdateManyWithWhereWithoutHoldingsInput[]
+    deleteMany?: MajorAssetClassScalarWhereInput | MajorAssetClassScalarWhereInput[]
+  }
+
+  export type MajorAssetClassUncheckedUpdateManyWithoutHoldingsNestedInput = {
+    create?: XOR<MajorAssetClassCreateWithoutHoldingsInput, MajorAssetClassUncheckedCreateWithoutHoldingsInput> | MajorAssetClassCreateWithoutHoldingsInput[] | MajorAssetClassUncheckedCreateWithoutHoldingsInput[]
+    connectOrCreate?: MajorAssetClassCreateOrConnectWithoutHoldingsInput | MajorAssetClassCreateOrConnectWithoutHoldingsInput[]
+    upsert?: MajorAssetClassUpsertWithWhereUniqueWithoutHoldingsInput | MajorAssetClassUpsertWithWhereUniqueWithoutHoldingsInput[]
+    createMany?: MajorAssetClassCreateManyHoldingsInputEnvelope
+    set?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    disconnect?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    delete?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    connect?: MajorAssetClassWhereUniqueInput | MajorAssetClassWhereUniqueInput[]
+    update?: MajorAssetClassUpdateWithWhereUniqueWithoutHoldingsInput | MajorAssetClassUpdateWithWhereUniqueWithoutHoldingsInput[]
+    updateMany?: MajorAssetClassUpdateManyWithWhereWithoutHoldingsInput | MajorAssetClassUpdateManyWithWhereWithoutHoldingsInput[]
+    deleteMany?: MajorAssetClassScalarWhereInput | MajorAssetClassScalarWhereInput[]
+  }
+
+  export type HoldingsCreateNestedOneWithoutMajorAssetClassesInput = {
+    create?: XOR<HoldingsCreateWithoutMajorAssetClassesInput, HoldingsUncheckedCreateWithoutMajorAssetClassesInput>
+    connectOrCreate?: HoldingsCreateOrConnectWithoutMajorAssetClassesInput
+    connect?: HoldingsWhereUniqueInput
+  }
+
+  export type AssetClassCreateNestedManyWithoutMajorAssetClassInput = {
+    create?: XOR<AssetClassCreateWithoutMajorAssetClassInput, AssetClassUncheckedCreateWithoutMajorAssetClassInput> | AssetClassCreateWithoutMajorAssetClassInput[] | AssetClassUncheckedCreateWithoutMajorAssetClassInput[]
+    connectOrCreate?: AssetClassCreateOrConnectWithoutMajorAssetClassInput | AssetClassCreateOrConnectWithoutMajorAssetClassInput[]
+    createMany?: AssetClassCreateManyMajorAssetClassInputEnvelope
+    connect?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+  }
+
+  export type AssetClassUncheckedCreateNestedManyWithoutMajorAssetClassInput = {
+    create?: XOR<AssetClassCreateWithoutMajorAssetClassInput, AssetClassUncheckedCreateWithoutMajorAssetClassInput> | AssetClassCreateWithoutMajorAssetClassInput[] | AssetClassUncheckedCreateWithoutMajorAssetClassInput[]
+    connectOrCreate?: AssetClassCreateOrConnectWithoutMajorAssetClassInput | AssetClassCreateOrConnectWithoutMajorAssetClassInput[]
+    createMany?: AssetClassCreateManyMajorAssetClassInputEnvelope
+    connect?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+  }
+
+  export type HoldingsUpdateOneRequiredWithoutMajorAssetClassesNestedInput = {
+    create?: XOR<HoldingsCreateWithoutMajorAssetClassesInput, HoldingsUncheckedCreateWithoutMajorAssetClassesInput>
+    connectOrCreate?: HoldingsCreateOrConnectWithoutMajorAssetClassesInput
+    upsert?: HoldingsUpsertWithoutMajorAssetClassesInput
+    connect?: HoldingsWhereUniqueInput
+    update?: XOR<XOR<HoldingsUpdateToOneWithWhereWithoutMajorAssetClassesInput, HoldingsUpdateWithoutMajorAssetClassesInput>, HoldingsUncheckedUpdateWithoutMajorAssetClassesInput>
+  }
+
+  export type AssetClassUpdateManyWithoutMajorAssetClassNestedInput = {
+    create?: XOR<AssetClassCreateWithoutMajorAssetClassInput, AssetClassUncheckedCreateWithoutMajorAssetClassInput> | AssetClassCreateWithoutMajorAssetClassInput[] | AssetClassUncheckedCreateWithoutMajorAssetClassInput[]
+    connectOrCreate?: AssetClassCreateOrConnectWithoutMajorAssetClassInput | AssetClassCreateOrConnectWithoutMajorAssetClassInput[]
+    upsert?: AssetClassUpsertWithWhereUniqueWithoutMajorAssetClassInput | AssetClassUpsertWithWhereUniqueWithoutMajorAssetClassInput[]
+    createMany?: AssetClassCreateManyMajorAssetClassInputEnvelope
+    set?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    disconnect?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    delete?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    connect?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    update?: AssetClassUpdateWithWhereUniqueWithoutMajorAssetClassInput | AssetClassUpdateWithWhereUniqueWithoutMajorAssetClassInput[]
+    updateMany?: AssetClassUpdateManyWithWhereWithoutMajorAssetClassInput | AssetClassUpdateManyWithWhereWithoutMajorAssetClassInput[]
+    deleteMany?: AssetClassScalarWhereInput | AssetClassScalarWhereInput[]
+  }
+
+  export type AssetClassUncheckedUpdateManyWithoutMajorAssetClassNestedInput = {
+    create?: XOR<AssetClassCreateWithoutMajorAssetClassInput, AssetClassUncheckedCreateWithoutMajorAssetClassInput> | AssetClassCreateWithoutMajorAssetClassInput[] | AssetClassUncheckedCreateWithoutMajorAssetClassInput[]
+    connectOrCreate?: AssetClassCreateOrConnectWithoutMajorAssetClassInput | AssetClassCreateOrConnectWithoutMajorAssetClassInput[]
+    upsert?: AssetClassUpsertWithWhereUniqueWithoutMajorAssetClassInput | AssetClassUpsertWithWhereUniqueWithoutMajorAssetClassInput[]
+    createMany?: AssetClassCreateManyMajorAssetClassInputEnvelope
+    set?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    disconnect?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    delete?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    connect?: AssetClassWhereUniqueInput | AssetClassWhereUniqueInput[]
+    update?: AssetClassUpdateWithWhereUniqueWithoutMajorAssetClassInput | AssetClassUpdateWithWhereUniqueWithoutMajorAssetClassInput[]
+    updateMany?: AssetClassUpdateManyWithWhereWithoutMajorAssetClassInput | AssetClassUpdateManyWithWhereWithoutMajorAssetClassInput[]
+    deleteMany?: AssetClassScalarWhereInput | AssetClassScalarWhereInput[]
+  }
+
+  export type MajorAssetClassCreateNestedOneWithoutAssetClassesInput = {
+    create?: XOR<MajorAssetClassCreateWithoutAssetClassesInput, MajorAssetClassUncheckedCreateWithoutAssetClassesInput>
+    connectOrCreate?: MajorAssetClassCreateOrConnectWithoutAssetClassesInput
+    connect?: MajorAssetClassWhereUniqueInput
+  }
+
+  export type MajorAssetClassUpdateOneRequiredWithoutAssetClassesNestedInput = {
+    create?: XOR<MajorAssetClassCreateWithoutAssetClassesInput, MajorAssetClassUncheckedCreateWithoutAssetClassesInput>
+    connectOrCreate?: MajorAssetClassCreateOrConnectWithoutAssetClassesInput
+    upsert?: MajorAssetClassUpsertWithoutAssetClassesInput
+    connect?: MajorAssetClassWhereUniqueInput
+    update?: XOR<XOR<MajorAssetClassUpdateToOneWithWhereWithoutAssetClassesInput, MajorAssetClassUpdateWithoutAssetClassesInput>, MajorAssetClassUncheckedUpdateWithoutAssetClassesInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -8141,6 +15117,58 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+  export type NestedJsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type AccountCreateWithoutUserInput = {
@@ -8389,6 +15417,433 @@ export namespace Prisma {
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
   }
 
+  export type HoldingsCreateWithoutAssetInput = {
+    majorAssetClasses?: MajorAssetClassCreateNestedManyWithoutHoldingsInput
+  }
+
+  export type HoldingsUncheckedCreateWithoutAssetInput = {
+    id?: number
+    majorAssetClasses?: MajorAssetClassUncheckedCreateNestedManyWithoutHoldingsInput
+  }
+
+  export type HoldingsCreateOrConnectWithoutAssetInput = {
+    where: HoldingsWhereUniqueInput
+    create: XOR<HoldingsCreateWithoutAssetInput, HoldingsUncheckedCreateWithoutAssetInput>
+  }
+
+  export type HoldingsUpsertWithoutAssetInput = {
+    update: XOR<HoldingsUpdateWithoutAssetInput, HoldingsUncheckedUpdateWithoutAssetInput>
+    create: XOR<HoldingsCreateWithoutAssetInput, HoldingsUncheckedCreateWithoutAssetInput>
+    where?: HoldingsWhereInput
+  }
+
+  export type HoldingsUpdateToOneWithWhereWithoutAssetInput = {
+    where?: HoldingsWhereInput
+    data: XOR<HoldingsUpdateWithoutAssetInput, HoldingsUncheckedUpdateWithoutAssetInput>
+  }
+
+  export type HoldingsUpdateWithoutAssetInput = {
+    majorAssetClasses?: MajorAssetClassUpdateManyWithoutHoldingsNestedInput
+  }
+
+  export type HoldingsUncheckedUpdateWithoutAssetInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    majorAssetClasses?: MajorAssetClassUncheckedUpdateManyWithoutHoldingsNestedInput
+  }
+
+  export type AssetCreateWithoutHoldingsInput = {
+    assetId: string
+    assetDescription?: string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: string | null
+    assetMask?: string | null
+    assetName?: string | null
+    assetOwnerName?: string | null
+    balanceAsOf?: Date | string | null
+    balanceCostBasis?: number | null
+    balanceCostFrom?: string | null
+    balanceCurrent?: number | null
+    balanceFrom?: string | null
+    balancePrice?: number | null
+    balancePriceFrom?: string | null
+    balanceQuantityCurrent?: number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: string | null
+    creationDate?: Date | string | null
+    currencyCode?: string | null
+    deactivateBy?: Date | string | null
+    descriptionEstatePlan?: string | null
+    hasInvestment?: boolean | null
+    includeInNetWorth?: boolean | null
+    institutionId?: number | null
+    institutionName?: string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: string | null
+    isActive?: boolean | null
+    isAsset?: boolean | null
+    isFavorite?: boolean | null
+    isLinkedVendor?: boolean | null
+    lastUpdate?: Date | string | null
+    lastUpdateAttempt?: Date | string | null
+    logoName?: string | null
+    modificationDate?: Date | string | null
+    nextUpdate?: Date | string | null
+    nickname?: string | null
+    note?: string | null
+    noteDate?: Date | string | null
+    ownership?: string | null
+    primaryAssetCategory?: string | null
+    status?: string | null
+    statusCode?: string | null
+    userInstitutionId?: string | null
+    vendorAccountType?: string | null
+    vendorContainer?: string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: string | null
+    wealthAssetType?: string | null
+    wid?: string | null
+  }
+
+  export type AssetUncheckedCreateWithoutHoldingsInput = {
+    assetId: string
+    assetDescription?: string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: string | null
+    assetMask?: string | null
+    assetName?: string | null
+    assetOwnerName?: string | null
+    balanceAsOf?: Date | string | null
+    balanceCostBasis?: number | null
+    balanceCostFrom?: string | null
+    balanceCurrent?: number | null
+    balanceFrom?: string | null
+    balancePrice?: number | null
+    balancePriceFrom?: string | null
+    balanceQuantityCurrent?: number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: string | null
+    creationDate?: Date | string | null
+    currencyCode?: string | null
+    deactivateBy?: Date | string | null
+    descriptionEstatePlan?: string | null
+    hasInvestment?: boolean | null
+    includeInNetWorth?: boolean | null
+    institutionId?: number | null
+    institutionName?: string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: string | null
+    isActive?: boolean | null
+    isAsset?: boolean | null
+    isFavorite?: boolean | null
+    isLinkedVendor?: boolean | null
+    lastUpdate?: Date | string | null
+    lastUpdateAttempt?: Date | string | null
+    logoName?: string | null
+    modificationDate?: Date | string | null
+    nextUpdate?: Date | string | null
+    nickname?: string | null
+    note?: string | null
+    noteDate?: Date | string | null
+    ownership?: string | null
+    primaryAssetCategory?: string | null
+    status?: string | null
+    statusCode?: string | null
+    userInstitutionId?: string | null
+    vendorAccountType?: string | null
+    vendorContainer?: string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: string | null
+    wealthAssetType?: string | null
+    wid?: string | null
+  }
+
+  export type AssetCreateOrConnectWithoutHoldingsInput = {
+    where: AssetWhereUniqueInput
+    create: XOR<AssetCreateWithoutHoldingsInput, AssetUncheckedCreateWithoutHoldingsInput>
+  }
+
+  export type MajorAssetClassCreateWithoutHoldingsInput = {
+    majorClass?: string | null
+    assetClasses?: AssetClassCreateNestedManyWithoutMajorAssetClassInput
+  }
+
+  export type MajorAssetClassUncheckedCreateWithoutHoldingsInput = {
+    id?: number
+    majorClass?: string | null
+    assetClasses?: AssetClassUncheckedCreateNestedManyWithoutMajorAssetClassInput
+  }
+
+  export type MajorAssetClassCreateOrConnectWithoutHoldingsInput = {
+    where: MajorAssetClassWhereUniqueInput
+    create: XOR<MajorAssetClassCreateWithoutHoldingsInput, MajorAssetClassUncheckedCreateWithoutHoldingsInput>
+  }
+
+  export type MajorAssetClassCreateManyHoldingsInputEnvelope = {
+    data: MajorAssetClassCreateManyHoldingsInput | MajorAssetClassCreateManyHoldingsInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type AssetUpsertWithoutHoldingsInput = {
+    update: XOR<AssetUpdateWithoutHoldingsInput, AssetUncheckedUpdateWithoutHoldingsInput>
+    create: XOR<AssetCreateWithoutHoldingsInput, AssetUncheckedCreateWithoutHoldingsInput>
+    where?: AssetWhereInput
+  }
+
+  export type AssetUpdateToOneWithWhereWithoutHoldingsInput = {
+    where?: AssetWhereInput
+    data: XOR<AssetUpdateWithoutHoldingsInput, AssetUncheckedUpdateWithoutHoldingsInput>
+  }
+
+  export type AssetUpdateWithoutHoldingsInput = {
+    assetId?: StringFieldUpdateOperationsInput | string
+    assetDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: NullableStringFieldUpdateOperationsInput | string | null
+    assetMask?: NullableStringFieldUpdateOperationsInput | string | null
+    assetName?: NullableStringFieldUpdateOperationsInput | string | null
+    assetOwnerName?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceAsOf?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    balanceCostBasis?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceCostFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balancePrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    balancePriceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceQuantityCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: NullableStringFieldUpdateOperationsInput | string | null
+    creationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    currencyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    deactivateBy?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    descriptionEstatePlan?: NullableStringFieldUpdateOperationsInput | string | null
+    hasInvestment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    includeInNetWorth?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    institutionId?: NullableIntFieldUpdateOperationsInput | number | null
+    institutionName?: NullableStringFieldUpdateOperationsInput | string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    isActive?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isAsset?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isFavorite?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isLinkedVendor?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    lastUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastUpdateAttempt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    logoName?: NullableStringFieldUpdateOperationsInput | string | null
+    modificationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nextUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nickname?: NullableStringFieldUpdateOperationsInput | string | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    noteDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ownership?: NullableStringFieldUpdateOperationsInput | string | null
+    primaryAssetCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    statusCode?: NullableStringFieldUpdateOperationsInput | string | null
+    userInstitutionId?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorAccountType?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorContainer?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: NullableStringFieldUpdateOperationsInput | string | null
+    wealthAssetType?: NullableStringFieldUpdateOperationsInput | string | null
+    wid?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type AssetUncheckedUpdateWithoutHoldingsInput = {
+    assetId?: StringFieldUpdateOperationsInput | string
+    assetDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    assetInfo?: NullableJsonNullValueInput | InputJsonValue
+    assetInfoType?: NullableStringFieldUpdateOperationsInput | string | null
+    assetMask?: NullableStringFieldUpdateOperationsInput | string | null
+    assetName?: NullableStringFieldUpdateOperationsInput | string | null
+    assetOwnerName?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceAsOf?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    balanceCostBasis?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceCostFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    balanceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balancePrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    balancePriceFrom?: NullableStringFieldUpdateOperationsInput | string | null
+    balanceQuantityCurrent?: NullableFloatFieldUpdateOperationsInput | number | null
+    beneficiaryComposition?: NullableJsonNullValueInput | InputJsonValue
+    cognitoId?: NullableStringFieldUpdateOperationsInput | string | null
+    creationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    currencyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    deactivateBy?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    descriptionEstatePlan?: NullableStringFieldUpdateOperationsInput | string | null
+    hasInvestment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    includeInNetWorth?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    institutionId?: NullableIntFieldUpdateOperationsInput | number | null
+    institutionName?: NullableStringFieldUpdateOperationsInput | string | null
+    integration?: NullableJsonNullValueInput | InputJsonValue
+    integrationAccountId?: NullableStringFieldUpdateOperationsInput | string | null
+    isActive?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isAsset?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isFavorite?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isLinkedVendor?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    lastUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lastUpdateAttempt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    logoName?: NullableStringFieldUpdateOperationsInput | string | null
+    modificationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nextUpdate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nickname?: NullableStringFieldUpdateOperationsInput | string | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    noteDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ownership?: NullableStringFieldUpdateOperationsInput | string | null
+    primaryAssetCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    statusCode?: NullableStringFieldUpdateOperationsInput | string | null
+    userInstitutionId?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorAccountType?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorContainer?: NullableStringFieldUpdateOperationsInput | string | null
+    vendorResponse?: NullableJsonNullValueInput | InputJsonValue
+    vendorResponseType?: NullableStringFieldUpdateOperationsInput | string | null
+    wealthAssetType?: NullableStringFieldUpdateOperationsInput | string | null
+    wid?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type MajorAssetClassUpsertWithWhereUniqueWithoutHoldingsInput = {
+    where: MajorAssetClassWhereUniqueInput
+    update: XOR<MajorAssetClassUpdateWithoutHoldingsInput, MajorAssetClassUncheckedUpdateWithoutHoldingsInput>
+    create: XOR<MajorAssetClassCreateWithoutHoldingsInput, MajorAssetClassUncheckedCreateWithoutHoldingsInput>
+  }
+
+  export type MajorAssetClassUpdateWithWhereUniqueWithoutHoldingsInput = {
+    where: MajorAssetClassWhereUniqueInput
+    data: XOR<MajorAssetClassUpdateWithoutHoldingsInput, MajorAssetClassUncheckedUpdateWithoutHoldingsInput>
+  }
+
+  export type MajorAssetClassUpdateManyWithWhereWithoutHoldingsInput = {
+    where: MajorAssetClassScalarWhereInput
+    data: XOR<MajorAssetClassUpdateManyMutationInput, MajorAssetClassUncheckedUpdateManyWithoutHoldingsInput>
+  }
+
+  export type MajorAssetClassScalarWhereInput = {
+    AND?: MajorAssetClassScalarWhereInput | MajorAssetClassScalarWhereInput[]
+    OR?: MajorAssetClassScalarWhereInput[]
+    NOT?: MajorAssetClassScalarWhereInput | MajorAssetClassScalarWhereInput[]
+    id?: IntFilter<"MajorAssetClass"> | number
+    holdingsId?: IntFilter<"MajorAssetClass"> | number
+    majorClass?: StringNullableFilter<"MajorAssetClass"> | string | null
+  }
+
+  export type HoldingsCreateWithoutMajorAssetClassesInput = {
+    asset: AssetCreateNestedOneWithoutHoldingsInput
+  }
+
+  export type HoldingsUncheckedCreateWithoutMajorAssetClassesInput = {
+    id?: number
+    assetId: string
+  }
+
+  export type HoldingsCreateOrConnectWithoutMajorAssetClassesInput = {
+    where: HoldingsWhereUniqueInput
+    create: XOR<HoldingsCreateWithoutMajorAssetClassesInput, HoldingsUncheckedCreateWithoutMajorAssetClassesInput>
+  }
+
+  export type AssetClassCreateWithoutMajorAssetClassInput = {
+    minorAssetClass?: string | null
+    value?: number | null
+  }
+
+  export type AssetClassUncheckedCreateWithoutMajorAssetClassInput = {
+    id?: number
+    minorAssetClass?: string | null
+    value?: number | null
+  }
+
+  export type AssetClassCreateOrConnectWithoutMajorAssetClassInput = {
+    where: AssetClassWhereUniqueInput
+    create: XOR<AssetClassCreateWithoutMajorAssetClassInput, AssetClassUncheckedCreateWithoutMajorAssetClassInput>
+  }
+
+  export type AssetClassCreateManyMajorAssetClassInputEnvelope = {
+    data: AssetClassCreateManyMajorAssetClassInput | AssetClassCreateManyMajorAssetClassInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type HoldingsUpsertWithoutMajorAssetClassesInput = {
+    update: XOR<HoldingsUpdateWithoutMajorAssetClassesInput, HoldingsUncheckedUpdateWithoutMajorAssetClassesInput>
+    create: XOR<HoldingsCreateWithoutMajorAssetClassesInput, HoldingsUncheckedCreateWithoutMajorAssetClassesInput>
+    where?: HoldingsWhereInput
+  }
+
+  export type HoldingsUpdateToOneWithWhereWithoutMajorAssetClassesInput = {
+    where?: HoldingsWhereInput
+    data: XOR<HoldingsUpdateWithoutMajorAssetClassesInput, HoldingsUncheckedUpdateWithoutMajorAssetClassesInput>
+  }
+
+  export type HoldingsUpdateWithoutMajorAssetClassesInput = {
+    asset?: AssetUpdateOneRequiredWithoutHoldingsNestedInput
+  }
+
+  export type HoldingsUncheckedUpdateWithoutMajorAssetClassesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    assetId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type AssetClassUpsertWithWhereUniqueWithoutMajorAssetClassInput = {
+    where: AssetClassWhereUniqueInput
+    update: XOR<AssetClassUpdateWithoutMajorAssetClassInput, AssetClassUncheckedUpdateWithoutMajorAssetClassInput>
+    create: XOR<AssetClassCreateWithoutMajorAssetClassInput, AssetClassUncheckedCreateWithoutMajorAssetClassInput>
+  }
+
+  export type AssetClassUpdateWithWhereUniqueWithoutMajorAssetClassInput = {
+    where: AssetClassWhereUniqueInput
+    data: XOR<AssetClassUpdateWithoutMajorAssetClassInput, AssetClassUncheckedUpdateWithoutMajorAssetClassInput>
+  }
+
+  export type AssetClassUpdateManyWithWhereWithoutMajorAssetClassInput = {
+    where: AssetClassScalarWhereInput
+    data: XOR<AssetClassUpdateManyMutationInput, AssetClassUncheckedUpdateManyWithoutMajorAssetClassInput>
+  }
+
+  export type AssetClassScalarWhereInput = {
+    AND?: AssetClassScalarWhereInput | AssetClassScalarWhereInput[]
+    OR?: AssetClassScalarWhereInput[]
+    NOT?: AssetClassScalarWhereInput | AssetClassScalarWhereInput[]
+    id?: IntFilter<"AssetClass"> | number
+    majorAssetClassId?: IntFilter<"AssetClass"> | number
+    minorAssetClass?: StringNullableFilter<"AssetClass"> | string | null
+    value?: FloatNullableFilter<"AssetClass"> | number | null
+  }
+
+  export type MajorAssetClassCreateWithoutAssetClassesInput = {
+    majorClass?: string | null
+    holdings: HoldingsCreateNestedOneWithoutMajorAssetClassesInput
+  }
+
+  export type MajorAssetClassUncheckedCreateWithoutAssetClassesInput = {
+    id?: number
+    holdingsId: number
+    majorClass?: string | null
+  }
+
+  export type MajorAssetClassCreateOrConnectWithoutAssetClassesInput = {
+    where: MajorAssetClassWhereUniqueInput
+    create: XOR<MajorAssetClassCreateWithoutAssetClassesInput, MajorAssetClassUncheckedCreateWithoutAssetClassesInput>
+  }
+
+  export type MajorAssetClassUpsertWithoutAssetClassesInput = {
+    update: XOR<MajorAssetClassUpdateWithoutAssetClassesInput, MajorAssetClassUncheckedUpdateWithoutAssetClassesInput>
+    create: XOR<MajorAssetClassCreateWithoutAssetClassesInput, MajorAssetClassUncheckedCreateWithoutAssetClassesInput>
+    where?: MajorAssetClassWhereInput
+  }
+
+  export type MajorAssetClassUpdateToOneWithWhereWithoutAssetClassesInput = {
+    where?: MajorAssetClassWhereInput
+    data: XOR<MajorAssetClassUpdateWithoutAssetClassesInput, MajorAssetClassUncheckedUpdateWithoutAssetClassesInput>
+  }
+
+  export type MajorAssetClassUpdateWithoutAssetClassesInput = {
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+    holdings?: HoldingsUpdateOneRequiredWithoutMajorAssetClassesNestedInput
+  }
+
+  export type MajorAssetClassUncheckedUpdateWithoutAssetClassesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    holdingsId?: IntFieldUpdateOperationsInput | number
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
   export type AccountCreateManyUserInput = {
     type: string
     provider: string
@@ -8475,6 +15930,50 @@ export namespace Prisma {
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MajorAssetClassCreateManyHoldingsInput = {
+    id?: number
+    majorClass?: string | null
+  }
+
+  export type MajorAssetClassUpdateWithoutHoldingsInput = {
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+    assetClasses?: AssetClassUpdateManyWithoutMajorAssetClassNestedInput
+  }
+
+  export type MajorAssetClassUncheckedUpdateWithoutHoldingsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+    assetClasses?: AssetClassUncheckedUpdateManyWithoutMajorAssetClassNestedInput
+  }
+
+  export type MajorAssetClassUncheckedUpdateManyWithoutHoldingsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    majorClass?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type AssetClassCreateManyMajorAssetClassInput = {
+    id?: number
+    minorAssetClass?: string | null
+    value?: number | null
+  }
+
+  export type AssetClassUpdateWithoutMajorAssetClassInput = {
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type AssetClassUncheckedUpdateWithoutMajorAssetClassInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type AssetClassUncheckedUpdateManyWithoutMajorAssetClassInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    minorAssetClass?: NullableStringFieldUpdateOperationsInput | string | null
+    value?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
 

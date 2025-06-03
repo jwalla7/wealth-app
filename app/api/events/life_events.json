@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "event": "Marriage",
+        "description": "Combining assets and updating estate documents.",
+        "monetaryValue": 50000.00
+    },
+    {
+        "id": 2,
+        "event": "Divorce",
+        "description": "Asset division, legal fees, and separate planning.",
+        "monetaryValue": -75000.00
+    },
+    {
+        "id": 3,
+        "event": "Birth of Child",
+        "description": "Education and healthcare planning, insurance increase.",
+        "monetaryValue": -200000.00
+    },
+    {
+        "id": 4,
+        "event": "Adoption",
+        "description": "Legal fees and financial support planning for adopted child.",
+        "monetaryValue": -45000.00
+    },
+    {
+        "id": 5,
+        "event": "Inheritance Received",
+        "description": "Increase in assets requiring estate strategy revision.",
+        "monetaryValue": 750000.00
+    },
+    {
+        "id": 6,
+        "event": "Death of Spouse",
+        "description": "Triggers estate transition and reassessment of plans.",
+        "monetaryValue": -300000.00
+    },
+    {
+        "id": 7,
+        "event": "Starting a Business",
+        "description": "Initial capital investment and tax implications.",
+        "monetaryValue": -150000.00
+    },
+    {
+        "id": 8,
+        "event": "Selling a Business",
+        "description": "Liquidity event, estate tax exposure.",
+        "monetaryValue": 2000000.00
+    },
+    {
+        "id": 9,
+        "event": "Major Lawsuit Settlement (received)",
+        "description": "Sudden wealth, estate planning opportunity.",
+        "monetaryValue": 1200000.00
+    },
+    {
+        "id": 10,
+        "event": "Major Lawsuit Settlement (paid)",
+        "description": "Significant liability payout affects net worth.",
+        "monetaryValue": -600000.00
+    },
+    {
+        "id": 11,
+        "event": "Winning Lottery",
+        "description": "Significant wealth influx requiring complex planning.",
+        "monetaryValue": 20000000.00
+    },
+    {
+        "id": 12,
+        "event": "Job Loss",
+        "description": "Loss of income and benefits, requires savings reevaluation.",
+        "monetaryValue": -100000.00
+    },
+    {
+        "id": 13,
+        "event": "New Job with Equity",
+        "description": "Equity grants require estate/tax planning.",
+        "monetaryValue": 250000.00
+    },
+    {
+        "id": 14,
+        "event": "Promotion with Raise",
+        "description": "Higher income, higher tax bracket, new planning needs.",
+        "monetaryValue": 30000.00
+    },
+    {
+        "id": 15,
+        "event": "Relocating to High-Tax State",
+        "description": "Change in income and estate tax structure.",
+        "monetaryValue": -20000.00
+    },
+    {
+        "id": 16,
+        "event": "Relocating to Tax-Friendly State",
+        "description": "Lower tax liability on estate and income.",
+        "monetaryValue": 25000.00
+    },
+    {
+        "id": 17,
+        "event": "Natural Disaster Damage",
+        "description": "Loss of property and emergency spending.",
+        "monetaryValue": -80000.00
+    },
+    {
+        "id": 18,
+        "event": "Buying a Home",
+        "description": "New debt, tax deductions, and property considerations.",
+        "monetaryValue": -400000.00
+    },
+    {
+        "id": 19,
+        "event": "Selling a Home",
+        "description": "Capital gains or reinvestment opportunity.",
+        "monetaryValue": 150000.00
+    },
+    {
+        "id": 20,
+        "event": "Refinancing Mortgage",
+        "description": "New terms affecting long-term finances.",
+        "monetaryValue": 20000.00
+    },
+    {
+        "id": 21,
+        "event": "Retirement",
+        "description": "Switch to income drawdown; estate plan activation.",
+        "monetaryValue": -50000.00
+    },
+    {
+        "id": 22,
+        "event": "Disability",
+        "description": "Increased care costs and loss of income.",
+        "monetaryValue": -250000.00
+    },
+    {
+        "id": 23,
+        "event": "Large Charitable Donation",
+        "description": "Estate reduction for tax strategy.",
+        "monetaryValue": -100000.00
+    },
+    {
+        "id": 24,
+        "event": "Receiving RSUs",
+        "description": "Stock compensation with future tax and estate impact.",
+        "monetaryValue": 120000.00
+    },
+    {
+        "id": 25,
+        "event": "Stock Market Crash",
+        "description": "Decrease in portfolio value, may delay retirement.",
+        "monetaryValue": -400000.00
+    },
+    {
+        "id": 26,
+        "event": "Graduating with Student Debt",
+        "description": "Long-term debt liability.",
+        "monetaryValue": -75000.00
+    },
+    {
+        "id": 27,
+        "event": "Receiving Trust Income",
+        "description": "Regular income from trust triggering tax obligations.",
+        "monetaryValue": 100000.00
+    },
+    {
+        "id": 28,
+        "event": "Setting up a Trust",
+        "description": "Upfront legal cost for long-term estate strategy.",
+        "monetaryValue": -15000.00
+    },
+    {
+        "id": 29,
+        "event": "Filing for Bankruptcy",
+        "description": "Asset liquidation, impacts estate solvency.",
+        "monetaryValue": -200000.00
+    },
+    {
+        "id": 30,
+        "event": "Buying Investment Property",
+        "description": "Rental income, property taxes, and liabilities.",
+        "monetaryValue": -300000.00
+    },
+    {
+        "id": 31,
+        "event": "Receiving Royalty Payments",
+        "description": "Passive income requiring reporting and planning.",
+        "monetaryValue": 50000.00
+    },
+    {
+        "id": 32,
+        "event": "Receiving Crypto Windfall",
+        "description": "Volatile asset requiring tax and estate strategy.",
+        "monetaryValue": 300000.00
+    },
+    {
+        "id": 33,
+        "event": "Major Medical Expense",
+        "description": "Unexpected expense, possibly not covered by insurance.",
+        "monetaryValue": -70000.00
+    },
+    {
+        "id": 34,
+        "event": "Long-Term Care Need",
+        "description": "Ongoing assisted living or nursing costs.",
+        "monetaryValue": -120000.00
+    },
+    {
+        "id": 35,
+        "event": "Launching a Nonprofit",
+        "description": "Initial cost and estate planning implications.",
+        "monetaryValue": -35000.00
+    },
+    {
+        "id": 36,
+        "event": "Selling a Collectible Asset",
+        "description": "One-time gain (e.g. art, car, crypto).",
+        "monetaryValue": 25000.00
+    },
+    {
+        "id": 37,
+        "event": "Death of Parent",
+        "description": "Possible inheritance and care obligations.",
+        "monetaryValue": 500000.00
+    },
+    {
+        "id": 38,
+        "event": "Gifting to Children",
+        "description": "Reduces estate value and may trigger gift tax.",
+        "monetaryValue": -100000.00
+    },
+    {
+        "id": 39,
+        "event": "IRS Audit",
+        "description": "Legal and accounting fees, back taxes.",
+        "monetaryValue": -25000.00
+    },
+    {
+        "id": 40,
+        "event": "Buying a Luxury Vehicle",
+        "description": "Large expense that depreciates over time.",
+        "monetaryValue": -85000.00
+    },
+    {
+        "id": 41,
+        "event": "Downsizing Home",
+        "description": "Reduces expenses and frees up capital.",
+        "monetaryValue": 120000.00
+    },
+    {
+        "id": 42,
+        "event": "Paying Off Mortgage",
+        "description": "Eliminates debt and increases cash flow.",
+        "monetaryValue": 180000.00
+    },
+    {
+        "id": 43,
+        "event": "Receiving Alimony",
+        "description": "Ongoing income from legal arrangement.",
+        "monetaryValue": 20000.00
+    },
+    {
+        "id": 44,
+        "event": "Receiving Backpay",
+        "description": "Lump sum compensation from employer.",
+        "monetaryValue": 40000.00
+    },
+    {
+        "id": 45,
+        "event": "Child Getting Married",
+        "description": "Wedding expenses or gifts reduce assets.",
+        "monetaryValue": -30000.00
+    },
+    {
+        "id": 46,
+        "event": "Opening a College Fund",
+        "description": "Future education savings.",
+        "monetaryValue": -50000.00
+    },
+    {
+        "id": 47,
+        "event": "Buying Life Insurance",
+        "description": "Annual premium affects cash flow.",
+        "monetaryValue": -3000.00
+    },
+    {
+        "id": 48,
+        "event": "Selling Stocks",
+        "description": "Triggers capital gains or losses.",
+        "monetaryValue": 15000.00
+    },
+    {
+        "id": 49,
+        "event": "Taking Out a Loan",
+        "description": "New liability requiring repayment strategy.",
+        "monetaryValue": -100000.00
+    },
+    {
+        "id": 50,
+        "event": "Changing Citizenship",
+        "description": "May trigger expatriation tax or estate exclusions.",
+        "monetaryValue": -50000.00
+    }
+]

@@ -3,7 +3,6 @@ import { NextResponse } from "next/server"
 
 export default auth((req) => {
     const isLoggedIn = !!req.auth
-
     const { pathname } = req.nextUrl
 
     const isApiRoute = pathname.startsWith('/api/') && !pathname.startsWith('/api/auth/')
@@ -21,9 +20,7 @@ export default auth((req) => {
 
     if (!isLoggedIn && pathname !== "/auth/login") {
         const loginUrl = new URL("/auth/login", req.nextUrl.origin)
-
         loginUrl.searchParams.set('callbackUrl', pathname + req.nextUrl.search)
-
         return NextResponse.redirect(loginUrl)
     }
 
